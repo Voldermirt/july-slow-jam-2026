@@ -25,3 +25,5 @@ texture = SubResource("GradientTexture2D_qu4a1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=365492730]
 shape = SubResource("RectangleShape2D_15q6v")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1238182868]
