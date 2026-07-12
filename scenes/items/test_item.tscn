@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://60bu5ksvhsu8"]
 
-[ext_resource type="Script" uid="uid://dffgikgqoh3gx" path="res://scripts/items/test_item.gd" id="1_mh7tv"]
+[ext_resource type="Script" uid="uid://dm5xpt5nsfdra" path="res://scripts/items/test_item.gd" id="1_mh7tv"]
 [ext_resource type="Texture2D" uid="uid://d1rfvm2lnchiu" path="res://icon.svg" id="2_r0ivm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pgw28"]
@@ -18,7 +18,6 @@ script = ExtResource("1_mh7tv")
 sprite = NodePath("Sprite2D")
 collision = NodePath("CollisionShape2D")
 interact_area = NodePath("Area2D")
-metadata/_custom_type_script = "uid://dwtr5cp5tcuo3"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1922339491]
 scale = Vector2(0.44400042, 0.44400042)
