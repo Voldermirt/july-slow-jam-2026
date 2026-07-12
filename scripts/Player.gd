@@ -12,6 +12,9 @@ extends CharacterBody2D
 @export var max_coyote_time : float = 0.05
 @export var max_jump_buffer : float = 0.05
 
+@export_group("Item Stack Options")
+@export var base_knock_off_threshold : float = 650.0
+
 var jump_force : float
 var gravity : float # Gravity used while the player is falling
 var jump_gravity : float # The gravity used while the player is jumping up
@@ -20,6 +23,10 @@ var coyote_timer := 0.0
 var jump_buffer_timer := 0.0
 var was_on_floor := false # Was the player on the floor last frame?
 var is_jumping := false
+
+var last_velocity := Vector2.ZERO
+var facing_direction := Vector2.RIGHT
+@onready var item_stack : Node2D = $ItemStack
 
 func _ready() -> void:
 	# Calculate jump values
@@ -39,6 +46,8 @@ func _physics_process(delta: float) -> void:
 	horizontal_movement(delta)
 	jump(delta)
 	
+	check_stack_stability(delta)
+	
 	apply_velocity(delta)
 
 # Gets the target horizontal movement velocity from the player's input
@@ -46,8 +55,10 @@ func horizontal_movement(delta: float):
 	var vel := 0.0
 	if Input.is_action_pressed("left"):
 		vel -= speed
+		facing_direction = Vector2.LEFT
 	if Input.is_action_pressed("right"):
 		vel += speed
+		facing_direction = Vector2.RIGHT
 	
 	velocity.x = move_toward(velocity.x, vel, accel * delta)
 	
@@ -91,4 +102,35 @@ func apply_velocity(delta : float):
 			coyote_timer = max_coyote_time
 	
 	was_on_floor = is_on_floor()
+	var pre_slide_velocity = velocity
 	move_and_slide()
+	
+	if is_on_wall() and pre_slide_velocity.length() > 100.0:
+		knock_off_item()
+
+func check_stack_stability(delta : float) -> void:
+	if not item_stack or item_stack.get_stack_height() == 0:
+		return
+	
+	var current_acceleration = (velocity - last_velocity) / delta
+	last_velocity = velocity
+	
+	var height_penalty = 1.0 + (item_stack.get_stack_height() * 0.25)
+	var modified_threshold = base_knock_off_threshold / height_penalty
+	
+	if current_acceleration.length() > modified_threshold:
+		knock_off_item()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact"):
+		drop_item_voluntarily()
+
+func drop_item_voluntarily() -> void:
+	if item_stack and item_stack.get_stack_height() > 0:
+		var toss_vector = (facing_direction * 140.0) + Vector2(0, -80.0)
+		item_stack.pop_item(global_position + (facing_direction * 16), toss_vector)
+
+func knock_off_item() -> void:
+	if item_stack and item_stack.get_stack_height() > 0:
+		var chaos_vector = Vector2(randf_range(-100, 100), -200.0)
+		item_stack.pop_item(global_position + Vector2(0, -24), chaos_vector)
