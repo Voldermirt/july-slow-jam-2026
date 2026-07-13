@@ -26,18 +26,11 @@ class_name BaseItem extends RigidBody2D
 
 
 # States
-# on_stack: whether the item is currently on the stack.
 # is_placed: whether the item has been placed.
-# If neither are true, then the item is falling.
-var on_stack: bool
+# If false, then the item is falling.
 var is_placed: bool
 
 func _ready() -> void:
-	# Report collisions when frozen
-	contact_monitor = true
-	max_contacts_reported = 5
-	# Don't use custom integrator yet
-	custom_integrator = false
 	freeze_mode = RigidBody2D.FREEZE_MODE_STATIC
 	# Connect signals
 	interact_area.body_entered.connect(handle_body_entered)
@@ -51,27 +44,18 @@ func _ready() -> void:
 	interact_area.set_collision_mask_value(2, true)
 
 func _init() -> void:
-	on_stack = true
 	is_placed = false
 
 ## Called when the item is instantiated while being knocked off the stack.
 ## Args:
 ## 		velocity: The input velocity of the item being knocked off. 
 func knock_down(velocity: Vector2) -> void:
-	if not on_stack: # item has already been dropped
-		return
-	on_stack = false
-	
 	apply_impulse(velocity)
 
 ## Called when the item is instantiated while being intentionally placed.
 ## Args:
 ## 		direction: The direction the player is facing. -1 = left, 1 = right.
 func drop(direction: int) -> void:
-	if not on_stack:
-		return
-	on_stack = false
-	
 	apply_impulse(Vector2(direction, place_angle) * base_speed)
 
 ## Called when the item lands and stops moving. Locks item in place.
