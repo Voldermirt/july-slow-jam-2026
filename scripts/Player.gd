@@ -29,6 +29,7 @@ var facing_direction := Vector2.RIGHT
 @onready var item_stack : Node2D = $ItemStack
 
 func _ready() -> void:
+	add_to_group("player")
 	# Calculate jump values
 	# I stole these calculations from a GDC talk
 	jump_force = 2.0 * jump_height / (time_to_peak_seconds)

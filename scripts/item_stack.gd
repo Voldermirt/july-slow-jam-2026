@@ -13,13 +13,13 @@ func pop_item(spawn_position: Vector2, throw_velocity: Vector2) -> void:
 	if stack.is_empty():
 		return
 		
-	var item_data = stack.pop_front() # FIFO stack popping
+	var item_data = stack.pop_front()
 	
 	var new_item = item_scene.instantiate()
 	get_tree().current_scene.add_child(new_item)
 	new_item.global_position = spawn_position
 	
-	# Apply properties...
+	
 	new_item.on_dropped(throw_velocity)
 	_update_visual_stack()
 
