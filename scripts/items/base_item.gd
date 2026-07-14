@@ -11,7 +11,8 @@ class_name BaseItem extends RigidBody2D
 ## TODO how does this interact with mass? is this Weven necessary?
 #@export_range(0.0, 2.0, 0.1) 	var weight: float = 1.0
 ## Value: The number of points this item is worth when delivered
-@export_range(0, 10, 1) 		var value: int = 5
+#@export_range(0, 10, 1) var value: int = 5
+var item_data : Item = null
 
 @export_category("Physics Properties")
 ## How much the item accelerates when placed.
@@ -19,10 +20,10 @@ class_name BaseItem extends RigidBody2D
 ## The y value for the angle an item gets pushed when placed
 @export var place_angle: float = -0.5
 
-@export_category("Child Nodes")
-@export var sprite: Sprite2D
-@export var collision: CollisionShape2D
-@export var interact_area: Area2D
+#@export_category("Child Nodes")
+@onready var sprite = $Sprite2D as Sprite2D
+@onready var interact_area := $Area2D
+#@onready var collision: CollisionShape2D
 
 
 # States
@@ -49,19 +50,23 @@ func _ready() -> void:
 	interact_area.set_collision_layer_value(2, true)
 	interact_area.set_collision_mask_value(1, true)
 	interact_area.set_collision_mask_value(2, true)
+	
+	if item_data:
+		sprite.texture = item_data.sprite
 
 func _init() -> void:
-	on_stack = true
+	#on_stack = true
 	is_placed = false
 
 ## Called when the item is instantiated while being knocked off the stack.
 ## Args:
 ## 		velocity: The input velocity of the item being knocked off. 
 func knock_down(velocity: Vector2) -> void:
-	if not on_stack: # item has already been dropped
-		return
-	on_stack = false
+	#if not on_stack: # item has already been dropped
+		#return
+	#on_stack = false
 	
+	print("IMPULSE")
 	apply_impulse(velocity)
 
 ## Called when the item is instantiated while being intentionally placed.

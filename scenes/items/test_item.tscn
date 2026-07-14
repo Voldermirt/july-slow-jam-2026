@@ -3,36 +3,30 @@
 [ext_resource type="Script" uid="uid://dm5xpt5nsfdra" path="res://scripts/items/test_item.gd" id="1_mh7tv"]
 [ext_resource type="Texture2D" uid="uid://d1rfvm2lnchiu" path="res://icon.svg" id="2_r0ivm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgw28"]
-size = Vector2(128, 127)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4lap"]
+size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1x3r"]
-size = Vector2(61, 59)
+size = Vector2(18, 18)
 
-[node name="TestItem" type="RigidBody2D" unique_id=1357666788 node_paths=PackedStringArray("sprite", "collision", "interact_area")]
+[node name="TestItem" type="RigidBody2D" unique_id=1357666788]
 collision_layer = 2
-collision_mask = 3
+collision_mask = 4
 input_pickable = true
 gravity_scale = 0.675
 script = ExtResource("1_mh7tv")
-sprite = NodePath("Sprite2D")
-collision = NodePath("CollisionShape2D")
-interact_area = NodePath("Area2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1922339491]
-scale = Vector2(0.44400042, 0.44400042)
 texture = ExtResource("2_r0ivm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=214554434]
-scale = Vector2(0.44400042, 0.44400042)
-shape = SubResource("RectangleShape2D_pgw28")
+shape = SubResource("RectangleShape2D_u4lap")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=900743383]
 collision_layer = 2
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1731941363]
-position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_t1x3r")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

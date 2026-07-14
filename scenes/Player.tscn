@@ -9,20 +9,19 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_qu4a1"]
 gradient = SubResource("Gradient_p0vlq")
-width = 128
-height = 128
+width = 32
+height = 32
 fill_from = Vector2(1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15q6v"]
 size = Vector2(32, 32)
 
 [node name="Player" type="CharacterBody2D" unique_id=2124019400]
-collision_mask = 3
+collision_mask = 4
 script = ExtResource("1_v6fml")
 accel = 50.0
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=405059077]
-scale = Vector2(0.25, 0.25)
 texture = SubResource("GradientTexture2D_qu4a1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=365492730]
