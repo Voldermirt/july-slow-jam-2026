@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var item_data : Resource
+@export var item_data : Item
 @onready var display_sprite : Sprite2D = $Sprite2D
 
 # Called when the node enters the scene tree for the first time.
