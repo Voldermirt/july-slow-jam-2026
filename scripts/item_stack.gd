@@ -79,8 +79,8 @@ func pop_item(dir := Vector2.ZERO) -> void:
 	# Group dynamically spawned items under a container if one exists
 	var container = get_tree().current_scene.find_child("SpawnedItemsContainer", true, false)
 	if not container:
-    container = get_tree().current_scene
-    
+		container = get_tree().current_scene
+	
 	container.call_deferred("add_child", new_item)
 	new_item.knock_down(dir * pop_force)
 	
