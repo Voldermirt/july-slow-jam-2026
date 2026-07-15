@@ -11,10 +11,10 @@
 size = Vector2(32, 320)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_471uh"]
-size = Vector2(600, 160)
+size = Vector2(657, 160)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s88nk"]
-size = Vector2(600, 160)
+size = Vector2(658, 160)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20uc6"]
 size = Vector2(480, 4)
@@ -42,7 +42,7 @@ scale = Vector2(2, 20)
 shape = SubResource("RectangleShape2D_tn8v7")
 
 [node name="wall 1" parent="Collisions" unique_id=1832983024 instance=ExtResource("3_s88nk")]
-position = Vector2(256, -25)
+position = Vector2(299, -25)
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" parent="Collisions/wall 1" index="0" unique_id=1488470973]
@@ -52,21 +52,22 @@ scale = Vector2(2, 20)
 shape = SubResource("RectangleShape2D_tn8v7")
 
 [node name="floor" parent="Collisions" unique_id=863357045 instance=ExtResource("3_s88nk")]
-position = Vector2(-60, 129)
+position = Vector2(-37, 129)
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" parent="Collisions/floor" index="0" unique_id=1488470973]
-scale = Vector2(37.5, 10)
+scale = Vector2(41, 10)
 
 [node name="CollisionShape2D" parent="Collisions/floor/StaticBody2D" parent_id_path=PackedInt32Array(863357045, 1239645926) index="0" unique_id=793594492]
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_471uh")
 
 [node name="ceiling" parent="Collisions" unique_id=2053507054 instance=ExtResource("3_s88nk")]
-position = Vector2(-60, -265)
+position = Vector2(-37, -265)
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" parent="Collisions/ceiling" index="0" unique_id=1488470973]
-scale = Vector2(37.5, 10)
+scale = Vector2(41, 10)
 
 [node name="CollisionShape2D" parent="Collisions/ceiling/StaticBody2D" parent_id_path=PackedInt32Array(2053507054, 1239645926) index="0" unique_id=793594492]
 shape = SubResource("RectangleShape2D_s88nk")
@@ -94,7 +95,7 @@ shape = SubResource("RectangleShape2D_yff2y")
 [node name="Blocking Markers" type="Node2D" parent="." unique_id=1818332048]
 
 [node name="door_marker" parent="Blocking Markers" unique_id=296325069 instance=ExtResource("4_tn8v7")]
-position = Vector2(220, 11)
+position = Vector2(232, 11)
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" parent="Blocking Markers/door_marker" index="0" unique_id=212661092]
@@ -126,9 +127,6 @@ position = Vector2(73, 36)
 metadata/_edit_group_ = true
 
 [node name="Background" type="Node2D" parent="." unique_id=1873794631]
-
-[node name="Player" parent="." unique_id=2124019400 instance=ExtResource("1_pv42f")]
-speed = 250.0
 
 [node name="Foreground" type="Node2D" parent="." unique_id=785247188]
 
