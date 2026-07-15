@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://digis8q116bte"]
 
-[ext_resource type="PackedScene" uid="uid://bn6nskligjksi" path="res://scenes/Player.tscn" id="1_pv42f"]
+[ext_resource type="Script" uid="uid://c6fr8dinugpoe" path="res://scenes/shop_world_area.gd" id="1_pv42f"]
 [ext_resource type="PackedScene" uid="uid://rd6c6cajvmr2" path="res://scenes/Shop Item.tscn" id="2_s88nk"]
 [ext_resource type="PackedScene" uid="uid://db7r6ub843mmq" path="res://scenes/objects/full_col_block.tscn" id="3_s88nk"]
 [ext_resource type="PackedScene" uid="uid://dx4wudfdre6t8" path="res://scenes/objects/basic_platform.tscn" id="4_20uc6"]
@@ -23,6 +23,7 @@ size = Vector2(480, 4)
 size = Vector2(64, 4)
 
 [node name="ShopWorldArea" type="Node2D" unique_id=1914970356]
+script = ExtResource("1_pv42f")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=110963680]
 
