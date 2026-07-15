@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://digis8q116bte"]
 
 [ext_resource type="Script" uid="uid://c6fr8dinugpoe" path="res://scripts/shop_world_area.gd" id="1_pv42f"]
+[ext_resource type="Script" uid="uid://bnmwo6dq5mx8d" path="res://scripts/item_resource.gd" id="2_l0oas"]
 [ext_resource type="PackedScene" uid="uid://rd6c6cajvmr2" path="res://scenes/Shop Item.tscn" id="2_s88nk"]
 [ext_resource type="PackedScene" uid="uid://db7r6ub843mmq" path="res://scenes/objects/full_col_block.tscn" id="3_s88nk"]
+[ext_resource type="Resource" uid="uid://blxrhac0oesr8" path="res://items/test_item.tres" id="3_v6ipv"]
 [ext_resource type="PackedScene" uid="uid://dx4wudfdre6t8" path="res://scenes/objects/basic_platform.tscn" id="4_20uc6"]
+[ext_resource type="Resource" uid="uid://br1gypir7g2e6" path="res://items/test_item_2.tres" id="4_27nn5"]
 [ext_resource type="PackedScene" uid="uid://c0gxboubvgc6k" path="res://scenes/markers/door_marker.tscn" id="4_tn8v7"]
-[ext_resource type="PackedScene" uid="uid://pnjb1ki2q8nr" path="res://scenes/markers/item_marker.tscn" id="4_yff2y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tn8v7"]
 size = Vector2(32, 320)
@@ -24,10 +26,9 @@ size = Vector2(64, 4)
 
 [node name="ShopWorldArea" type="Node2D" unique_id=1914970356]
 script = ExtResource("1_pv42f")
+item_pool = Array[ExtResource("2_l0oas")]([ExtResource("3_v6ipv"), ExtResource("4_27nn5")])
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=110963680]
-
-[node name="ShopItem" parent="." unique_id=1956626811 instance=ExtResource("2_s88nk")]
 
 [node name="Collisions" type="Node2D" parent="." unique_id=1324557931]
 
@@ -102,33 +103,29 @@ metadata/_edit_group_ = true
 position = Vector2(-3.8146973e-06, -4.7683716e-07)
 scale = Vector2(2.5000005, 4.75)
 
-[node name="item marker" parent="Blocking Markers" unique_id=43212690 instance=ExtResource("4_yff2y")]
-position = Vector2(-195, -39)
-metadata/_edit_group_ = true
-
-[node name="item marker2" parent="Blocking Markers" unique_id=1799791720 instance=ExtResource("4_yff2y")]
-position = Vector2(-60, -39)
-metadata/_edit_group_ = true
-
-[node name="item marker3" parent="Blocking Markers" unique_id=1855540965 instance=ExtResource("4_yff2y")]
-position = Vector2(73, -39)
-metadata/_edit_group_ = true
-
-[node name="item marker4" parent="Blocking Markers" unique_id=1352848248 instance=ExtResource("4_yff2y")]
-position = Vector2(-195, 36)
-metadata/_edit_group_ = true
-
-[node name="item marker5" parent="Blocking Markers" unique_id=596132935 instance=ExtResource("4_yff2y")]
-position = Vector2(-60, 36)
-metadata/_edit_group_ = true
-
-[node name="item marker6" parent="Blocking Markers" unique_id=1094608980 instance=ExtResource("4_yff2y")]
-position = Vector2(73, 36)
-metadata/_edit_group_ = true
-
 [node name="Background" type="Node2D" parent="." unique_id=1873794631]
 
 [node name="Foreground" type="Node2D" parent="." unique_id=785247188]
+
+[node name="ItemStands" type="Node2D" parent="." unique_id=1557254895]
+
+[node name="ShopItem" parent="ItemStands" unique_id=1956626811 instance=ExtResource("2_s88nk")]
+position = Vector2(-60, 36)
+
+[node name="ShopItem2" parent="ItemStands" unique_id=556954040 instance=ExtResource("2_s88nk")]
+position = Vector2(-195, 36)
+
+[node name="ShopItem3" parent="ItemStands" unique_id=661188220 instance=ExtResource("2_s88nk")]
+position = Vector2(73, 36)
+
+[node name="ShopItem4" parent="ItemStands" unique_id=273152041 instance=ExtResource("2_s88nk")]
+position = Vector2(-60, -39)
+
+[node name="ShopItem5" parent="ItemStands" unique_id=1692624574 instance=ExtResource("2_s88nk")]
+position = Vector2(-195, -39)
+
+[node name="ShopItem6" parent="ItemStands" unique_id=818412783 instance=ExtResource("2_s88nk")]
+position = Vector2(73, -39)
 
 [editable path="Collisions/wall 2"]
 [editable path="Collisions/wall 1"]

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://br1gypir7g2e6"]
+
+[ext_resource type="PackedScene" uid="uid://60bu5ksvhsu8" path="res://scenes/items/test_item.tscn" id="1_slwe8"]
+[ext_resource type="Script" uid="uid://bnmwo6dq5mx8d" path="res://scripts/item_resource.gd" id="2_iwi3h"]
+
+[sub_resource type="Gradient" id="Gradient_naakv"]
+colors = PackedColorArray(0, 1, 1, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jw5pp"]
+gradient = SubResource("Gradient_naakv")
+width = 24
+height = 24
+fill_from = Vector2(0.2948718, 0.7905983)
+
+[resource]
+script = ExtResource("2_iwi3h")
+sprite = SubResource("GradientTexture2D_jw5pp")
+min_value = 15
+max_value = 25
+instantiated_item = ExtResource("1_slwe8")
+metadata/_custom_type_script = "uid://bnmwo6dq5mx8d"
