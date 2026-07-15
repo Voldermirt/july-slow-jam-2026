@@ -16,5 +16,5 @@ animations = [{
 [node name="item marker" type="Node2D" unique_id=43212690]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1608125316]
-modulate = Color(0, 0.49029827, 0.44996756, 1)
+modulate = Color(2.117753e-06, 0.58599883, 0.40692434, 1)
 sprite_frames = SubResource("SpriteFrames_ui06d")

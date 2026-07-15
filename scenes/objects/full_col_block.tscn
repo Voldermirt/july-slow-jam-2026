@@ -2,9 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://bfbnvvhen1cdn" path="res://art/test_txtr_0.png" id="1_r5m6i"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ui06d"]
-size = Vector2(16, 16)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_ui06d"]
 animations = [{
 "frames": [{
@@ -16,12 +13,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ui06d"]
+size = Vector2(16, 16)
+
 [node name="full_col_block" type="Node2D" unique_id=863357045]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1488470973]
+sprite_frames = SubResource("SpriteFrames_ui06d")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1239645926]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=793594492]
 shape = SubResource("RectangleShape2D_ui06d")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1488470973]
-sprite_frames = SubResource("SpriteFrames_ui06d")
