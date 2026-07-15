@@ -123,6 +123,10 @@ func _on_item_collision(direction : Vector2, item_height : int) -> void:
 func get_adjusted_accel(p_accel : float, p_height : int) -> float:
 	return p_accel * (((p_height - 1) * height_multiplier) + 1)
 
+func drop_voluntarily(dir : Vector2) -> void: # If false: right
+	dir = dir.rotated(randf_range(-0.25, 0.25)) # Range of nearly 15 degrees either way
+	pop_item(dir)
+
 ### DEBUG PURPOSES ###
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug"):

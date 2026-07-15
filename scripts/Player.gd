@@ -62,11 +62,14 @@ func horizontal_movement(delta: float):
 	var vel := 0.0
 	if Input.is_action_pressed("left"):
 		vel -= speed
-		facing_direction = Vector2.LEFT
 	if Input.is_action_pressed("right"):
 		vel += speed
-		facing_direction = Vector2.RIGHT
 	
+	if vel < 0:
+		facing_direction = Vector2.LEFT
+	elif vel > 0:
+		facing_direction = Vector2.RIGHT
+		
 	velocity.x = move_toward(velocity.x, vel, accel * delta)
 	
 	
@@ -111,6 +114,11 @@ func apply_velocity(delta : float):
 	was_on_floor = is_on_floor()
 	#var pre_slide_velocity = velocity
 	move_and_slide()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact"):
+		item_stack.drop_voluntarily(facing_direction)
+
 	
 	#if is_on_wall() and pre_slide_velocity.length() > 100.0:
 		#knock_off_item()
@@ -128,9 +136,6 @@ func apply_velocity(delta : float):
 	#if current_acceleration.length() > modified_threshold:
 		#knock_off_item()
 #
-#func _unhandled_input(event: InputEvent) -> void:
-	#if event.is_action_pressed("interact"):
-		#drop_item_voluntarily()
 #
 #func drop_item_voluntarily() -> void:
 	#if item_stack and item_stack.get_stack_height() > 0:
