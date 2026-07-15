@@ -30,6 +30,7 @@ var facing_direction := Vector2.RIGHT
 @onready var item_stack : Node2D = $ItemStack
 
 func _ready() -> void:
+	add_to_group("player")
 	# Calculate jump values
 	# I stole these calculations from a GDC talk
 	jump_force = 2.0 * jump_height / (time_to_peak_seconds)
@@ -118,31 +119,8 @@ func apply_velocity(delta : float):
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		item_stack.drop_voluntarily(facing_direction)
-
 	
-	#if is_on_wall() and pre_slide_velocity.length() > 100.0:
-		#knock_off_item()
-#
-#func check_stack_stability(delta : float) -> void:
-	#if not item_stack or item_stack.get_height() == 0:
-		#return
-	#
-	#var current_acceleration = (velocity - last_velocity) / delta
-	#last_velocity = velocity
-	#
-	#var height_penalty = 1.0 + (item_stack.get_stack_height() * 0.25)
-	#var modified_threshold = base_knock_off_threshold / height_penalty
-	#
-	#if current_acceleration.length() > modified_threshold:
-		#knock_off_item()
-#
-#
-#func drop_item_voluntarily() -> void:
-	#if item_stack and item_stack.get_stack_height() > 0:
-		#var toss_vector = (facing_direction * 140.0) + Vector2(0, -80.0)
-		#item_stack.pop_item(global_position + (facing_direction * 16), toss_vector)
-#
-#func knock_off_item() -> void:
-	#if item_stack and item_stack.get_stack_height() > 0:
-		#var chaos_vector = Vector2(randf_range(-100, 100), -200.0)
-		#item_stack.pop_item(global_position + Vector2(0, -24), chaos_vector)
+func _input(event: InputEvent):
+	if (event.is_action_pressed("down") and is_on_floor()):
+		position.y += 1
+	
