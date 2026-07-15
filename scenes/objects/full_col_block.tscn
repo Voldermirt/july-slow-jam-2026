@@ -22,6 +22,7 @@ size = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_ui06d")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1239645926]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=793594492]
 shape = SubResource("RectangleShape2D_ui06d")
