@@ -12,8 +12,8 @@ extends CharacterBody2D
 @export var max_coyote_time : float = 0.05
 @export var max_jump_buffer : float = 0.05
 
-@export_group("Item Stack Options")
-@export var base_knock_off_threshold : float = 650.0
+#@export_group("Item Stack Options")
+#@export var base_knock_off_threshold : float = 650.0
 
 var jump_force : float
 var gravity : float # Gravity used while the player is falling
@@ -26,6 +26,7 @@ var is_jumping := false
 
 var last_velocity := Vector2.ZERO
 var facing_direction := Vector2.RIGHT
+
 @onready var item_stack : Node2D = $ItemStack
 
 func _ready() -> void:
@@ -41,26 +42,35 @@ func _ready() -> void:
 	accel *= 60
 	gravity *= 60
 	jump_gravity *= 60
+	
+	item_stack.set_player_max_speed(speed)
+	item_stack.set_player_gravity(gravity)
+	
 
 
 func _physics_process(delta: float) -> void:	
 	horizontal_movement(delta)
 	jump(delta)
 	
-	check_stack_stability(delta)
+	#check_stack_stability(delta)
 	
 	apply_velocity(delta)
+	
+	item_stack.set_player_velocity(velocity)
 
 # Gets the target horizontal movement velocity from the player's input
 func horizontal_movement(delta: float):
 	var vel := 0.0
 	if Input.is_action_pressed("left"):
 		vel -= speed
-		facing_direction = Vector2.LEFT
 	if Input.is_action_pressed("right"):
 		vel += speed
-		facing_direction = Vector2.RIGHT
 	
+	if vel < 0:
+		facing_direction = Vector2.LEFT
+	elif vel > 0:
+		facing_direction = Vector2.RIGHT
+		
 	velocity.x = move_toward(velocity.x, vel, accel * delta)
 	
 	
@@ -103,44 +113,12 @@ func apply_velocity(delta : float):
 			coyote_timer = max_coyote_time
 	
 	was_on_floor = is_on_floor()
-	var pre_slide_velocity = velocity
+	#var pre_slide_velocity = velocity
 	move_and_slide()
-	
-	if is_on_wall() and pre_slide_velocity.length() > 100.0:
-		knock_off_item()
-
-func check_stack_stability(delta : float) -> void:
-	if not item_stack or item_stack.get_stack_height() == 0:
-		return
-	
-	var current_acceleration = (velocity - last_velocity) / delta
-	last_velocity = velocity
-	
-	var height_penalty = 1.0 + (item_stack.get_stack_height() * 0.25)
-	var modified_threshold = base_knock_off_threshold / height_penalty
-	
-	if current_acceleration.length() > modified_threshold:
-		knock_off_item()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
-		drop_item_voluntarily()
-
-func drop_item_voluntarily() -> void:
-	if item_stack and item_stack.get_stack_height() > 0:
-		var direction_sign: int = sign(facing_direction.x)
-		if direction_sign == 0:
-			direction_sign = 1 
-			
-		var spawn_offset = Vector2(direction_sign * 16.0, 0)
-		var spawn_pos = global_position + spawn_offset
-		
-		item_stack.pop_item(spawn_pos, Vector2.ZERO, direction_sign)
-
-func knock_off_item() -> void:
-	if item_stack and item_stack.get_stack_height() > 0:
-		var chaos_vector = Vector2(randf_range(-100, 100), -200.0)
-		item_stack.pop_item(global_position + Vector2(0, -24), chaos_vector)
+		item_stack.drop_voluntarily(facing_direction)
 	
 func _input(event: InputEvent):
 	if (event.is_action_pressed("down") and is_on_floor()):
