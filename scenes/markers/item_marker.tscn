@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://pnjb1ki2q8nr"]
+
+[ext_resource type="Texture2D" uid="uid://binv5c85b57dd" path="res://art/test_txtr_1.png" id="1_ab4qd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ui06d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ab4qd")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="item marker" type="Node2D" unique_id=43212690]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1608125316]
+modulate = Color(0, 0.49029827, 0.44996756, 1)
+sprite_frames = SubResource("SpriteFrames_ui06d")

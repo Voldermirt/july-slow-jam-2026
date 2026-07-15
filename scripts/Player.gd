@@ -29,6 +29,7 @@ var facing_direction := Vector2.RIGHT
 @onready var item_stack : Node2D = $ItemStack
 
 func _ready() -> void:
+	add_to_group("player")
 	# Calculate jump values
 	# I stole these calculations from a GDC talk
 	jump_force = 2.0 * jump_height / (time_to_peak_seconds)
@@ -134,3 +135,8 @@ func knock_off_item() -> void:
 	if item_stack and item_stack.get_stack_height() > 0:
 		var chaos_vector = Vector2(randf_range(-100, 100), -200.0)
 		item_stack.pop_item(global_position + Vector2(0, -24), chaos_vector)
+	
+func _input(event: InputEvent):
+	if (event.is_action_pressed("down") and is_on_floor()):
+		position.y += 1
+	
