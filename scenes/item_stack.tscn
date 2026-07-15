@@ -2,5 +2,15 @@
 
 [ext_resource type="Script" uid="uid://cxfpoceinw0n0" path="res://scripts/item_stack.gd" id="1_frk2q"]
 
-[node name="ItemStack" type="Node2D" unique_id=1521678751]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_15q6v"]
+
+[node name="ItemStack" type="StaticBody2D" unique_id=425850299]
+collision_layer = 0
 script = ExtResource("1_frk2q")
+
+[node name="Items" type="Node2D" parent="." unique_id=1477152615]
+position = Vector2(0, -36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1502572080]
+shape = SubResource("WorldBoundaryShape2D_15q6v")
+disabled = true
