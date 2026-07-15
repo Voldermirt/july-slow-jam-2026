@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c0gxboubvgc6k"]
+
+[ext_resource type="Texture2D" uid="uid://binv5c85b57dd" path="res://art/test_txtr_1.png" id="1_gc4hx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lro0e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gc4hx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="door_marker" type="Node2D" unique_id=296325069]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=212661092]
+modulate = Color(0.3112042, 0.5651823, 0, 1)
+sprite_frames = SubResource("SpriteFrames_lro0e")
