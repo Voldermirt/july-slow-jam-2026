@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://digis8q116bte"]
 
-[ext_resource type="PackedScene" uid="uid://bn6nskligjksi" path="res://scenes/Player.tscn" id="1_pv42f"]
+[ext_resource type="Script" uid="uid://c6fr8dinugpoe" path="res://scenes/shop_world_area.gd" id="1_pv42f"]
 [ext_resource type="PackedScene" uid="uid://rd6c6cajvmr2" path="res://scenes/Shop Item.tscn" id="2_s88nk"]
 
 [node name="ShopWorldArea" type="Node2D" unique_id=1914970356]
+script = ExtResource("1_pv42f")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=110963680]
-
-[node name="Player" parent="." unique_id=2124019400 instance=ExtResource("1_pv42f")]
 
 [node name="ShopItem" parent="." unique_id=1956626811 instance=ExtResource("2_s88nk")]
