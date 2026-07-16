@@ -94,6 +94,7 @@ drop={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Items"
 2d_physics/layer_3="Ground"
+2d_physics/layer_4="Platforms"
 
 [physics]
 

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ecjf15ct3god"]
+
+[sub_resource type="Gradient" id="Gradient_30hfw"]
+colors = PackedColorArray(0.44, 0.24698667, 0.026400002, 1, 0.52, 0.2184, 0.0676, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_15q6v"]
+gradient = SubResource("Gradient_30hfw")
+width = 48
+height = 3
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_atvrc"]
+a = Vector2(-24, 0)
+b = Vector2(24, 0)
+
+[node name="Rung1" type="StaticBody2D" unique_id=261807054]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=180165411]
+texture = SubResource("GradientTexture2D_15q6v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1904866217]
+shape = SubResource("SegmentShape2D_atvrc")
+one_way_collision = true

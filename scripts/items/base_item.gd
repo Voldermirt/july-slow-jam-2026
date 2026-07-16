@@ -21,8 +21,8 @@ var item_data : Item = null
 @export var place_angle: float = -0.5
 
 #@export_category("Child Nodes")
-@onready var sprite = $Sprite2D as Sprite2D
-@onready var interact_area := $Area2D
+@onready var sprite : Sprite2D = null
+@onready var interact_area : Area2D = null
 #@onready var collision: CollisionShape2D
 
 
@@ -33,7 +33,16 @@ var item_data : Item = null
 var on_stack: bool
 var is_placed: bool
 
+# -1 = left, 1 = right
+var place_direction := 0
+
 func _ready() -> void:
+	
+	if has_node("Area2D"):
+		interact_area = get_node("Area2D")
+	if has_node("Sprite2D"):
+		sprite = get_node("Sprite2D")
+	
 	# Report collisions when frozen
 	contact_monitor = true
 	max_contacts_reported = 5
@@ -41,17 +50,21 @@ func _ready() -> void:
 	custom_integrator = false
 	freeze_mode = RigidBody2D.FREEZE_MODE_STATIC
 	# Connect signals
-	interact_area.body_entered.connect(handle_body_entered)
+	if interact_area:
+		interact_area.body_entered.connect(handle_body_entered)
 	sleeping_state_changed.connect(handle_sleeping_state_changed)
 	# Set collision layer
 	set_collision_layer_value(2, true)
 	set_collision_mask_value(1, true)
 	set_collision_mask_value(2, true)
-	interact_area.set_collision_layer_value(2, true)
-	interact_area.set_collision_mask_value(1, true)
-	interact_area.set_collision_mask_value(2, true)
+	if interact_area:
+		interact_area.set_collision_layer_value(2, true)
+		interact_area.set_collision_mask_value(1, true)
+		interact_area.set_collision_mask_value(2, true)
 	
-	if item_data:
+	
+	
+	if item_data and sprite:
 		sprite.texture = item_data.sprite
 
 func _init() -> void:
@@ -65,13 +78,17 @@ func knock_down(velocity: Vector2) -> void:
 	#if not on_stack: # item has already been dropped
 		#return
 	#on_stack = false
-	
-	print("IMPULSE")
+	if velocity.x < 0:
+		place_direction = -1
+	else:
+		place_direction = 1
 	apply_impulse(velocity)
 
 ## Called when the item is instantiated while being intentionally placed.
 ## Args:
 ## 		direction: The direction the player is facing. -1 = left, 1 = right.
+#
+## ACTUALLY This function never gets called, so.
 func drop(direction: int) -> void:
 	if not on_stack:
 		return
@@ -87,7 +104,7 @@ func on_land() -> void:
 	set_deferred("freeze", true)
 	
 ## Called when player or other item touches this item.
-func on_interact(body) -> void:
+func on_interact(_body) -> void:
 	pass
 
 ## Called when something collides with the item.
@@ -95,7 +112,7 @@ func handle_body_entered(body: Node) -> void:
 	if body is CharacterBody2D or body is BaseItem:
 		on_interact(body)
 
-## Triggered when the item stops moving for a certain period off time.
+## Triggered when the item stops moving for a certain period of time.
 func handle_sleeping_state_changed():
 	if sleeping:
 		on_land()
