@@ -1,13 +1,30 @@
 [gd_scene format=3 uid="uid://rd6c6cajvmr2"]
 
 [ext_resource type="Script" uid="uid://bnqf0x2okqx2a" path="res://scripts/shop_item.gd" id="1_ypfam"]
+[ext_resource type="PackedScene" uid="uid://c1owershenb8o" path="res://scenes/interactable_component.tscn" id="2_cgj4r"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_twto6"]
+[sub_resource type="Gradient" id="Gradient_cgj4r"]
 
-[node name="ShopItem" type="Area2D" unique_id=1956626811]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cgj4r"]
+gradient = SubResource("Gradient_cgj4r")
+width = 16
+height = 16
+fill_from = Vector2(0.41025642, 0.7094017)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jwhm"]
+size = Vector2(24, 24)
+
+[node name="ShopItem" type="Node2D" unique_id=556954040]
 script = ExtResource("1_ypfam")
 
-[node name="Item Sprite" type="Sprite2D" parent="." unique_id=474801029]
+[node name="ItemSprite" type="Sprite2D" parent="." unique_id=474801029]
+texture = SubResource("GradientTexture2D_cgj4r")
 
-[node name="Collision Area" type="CollisionShape2D" parent="." unique_id=216639664]
-shape = SubResource("RectangleShape2D_twto6")
+[node name="InteractableComponent" parent="." unique_id=60683989 instance=ExtResource("2_cgj4r")]
+
+[node name="CollisionShape2D" parent="InteractableComponent" index="0" unique_id=1634449250]
+shape = SubResource("RectangleShape2D_8jwhm")
+
+[connection signal="on_interact" from="InteractableComponent" to="." method="_on_interact"]
+
+[editable path="InteractableComponent"]

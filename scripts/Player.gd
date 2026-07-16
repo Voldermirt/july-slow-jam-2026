@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export_group("Movement Parameters")
 @export var speed : float = 120 # Pixels per second
@@ -27,7 +28,8 @@ var is_jumping := false
 var last_velocity := Vector2.ZERO
 var facing_direction := Vector2.RIGHT
 
-@onready var item_stack : Node2D = $ItemStack
+@onready var item_stack : ItemStack = $ItemStack
+@onready var interaction_area: Area2D = $InteractionArea
 
 func _ready() -> void:
 	add_to_group("player")
@@ -116,9 +118,31 @@ func apply_velocity(delta : float):
 	#var pre_slide_velocity = velocity
 	move_and_slide()
 
+func handle_interaction():
+	var areas = interaction_area.get_overlapping_areas() as Array[Node2D]
+	var closest : Node2D = null
+	var min_distance := 99999.0
+	
+	# Find closest interactable object
+	for area in areas:
+		if not area is Interactable:
+			continue
+		var dist : float = global_position.distance_to(area.global_position)
+		if dist < min_distance:
+			min_distance = dist
+			closest = area
+	
+	if closest:
+		closest.interact(self)
+	
+func add_item(item : Item):
+	item_stack.push_item(item)
+
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("drop"):
 		item_stack.drop_voluntarily(facing_direction)
+	elif event.is_action_pressed("interact"):
+		handle_interaction()
 	
 func _input(event: InputEvent):
 	if (event.is_action_pressed("down") and is_on_floor()):

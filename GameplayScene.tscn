@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bn6nskligjksi" path="res://scenes/Player.tscn" id="2_n4mhe"]
 [ext_resource type="PackedScene" uid="uid://cm1t03sonkpwx" path="res://scenes/objects/moving_platform.tscn" id="3_n4mhe"]
 [ext_resource type="PackedScene" uid="uid://digis8q116bte" path="res://scenes/Shop WorldArea.tscn" id="5_8jkjp"]
+[ext_resource type="PackedScene" uid="uid://rd6c6cajvmr2" path="res://scenes/Shop Item.tscn" id="6_4wexh"]
+[ext_resource type="Resource" uid="uid://blxrhac0oesr8" path="res://items/test_item.tres" id="7_665kd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15q6v"]
 size = Vector2(768, 32)
@@ -64,3 +66,7 @@ time_to_ground_seconds = 0.28
 
 [node name="ShopWorldArea" parent="." unique_id=1914970356 instance=ExtResource("5_8jkjp")]
 position = Vector2(-300, 290)
+
+[node name="ShopItem" parent="." unique_id=556954040 instance=ExtResource("6_4wexh")]
+position = Vector2(433, 279)
+item_data = ExtResource("7_665kd")
