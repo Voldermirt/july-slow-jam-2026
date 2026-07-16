@@ -1,5 +1,6 @@
 class_name TestItem extends BaseItem
 
+
 func _init() -> void:
 	super._init()
 	freeze = true

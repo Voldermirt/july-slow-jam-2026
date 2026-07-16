@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bxgnnbugrl8na"]
+
+[ext_resource type="Script" uid="uid://moxqtaeoddfd" path="res://scripts/items/ladder_item.gd" id="1_30hfw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4lap"]
+size = Vector2(16, 16)
+
+[sub_resource type="Gradient" id="Gradient_30hfw"]
+colors = PackedColorArray(0.41360003, 0.19800001, 0.66, 1, 0.21887495, 0.85, 0.1615, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_atvrc"]
+gradient = SubResource("Gradient_30hfw")
+width = 16
+height = 16
+fill_from = Vector2(0.32905984, 0.21367522)
+
+[node name="LadderItem" type="RigidBody2D" unique_id=1357666788]
+collision_layer = 2
+collision_mask = 4
+input_pickable = true
+gravity_scale = 0.675
+script = ExtResource("1_30hfw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=214554434]
+shape = SubResource("RectangleShape2D_u4lap")
+
+[node name="Rungs" type="Node2D" parent="." unique_id=2007034789]
+position = Vector2(0, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=738583495]
+texture = SubResource("GradientTexture2D_atvrc")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

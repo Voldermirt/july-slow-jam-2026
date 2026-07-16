@@ -57,7 +57,7 @@ _data = {
 [node name="Moving Platform" type="Node2D" unique_id=1663887942]
 
 [node name="Platform" type="AnimatableBody2D" parent="." unique_id=391249650]
-collision_layer = 4
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Platform" unique_id=290496104]

@@ -20,11 +20,12 @@ size = Vector2(32, 32)
 size = Vector2(32, 32)
 
 [node name="Player" type="CharacterBody2D" unique_id=2124019400]
-collision_mask = 4
+collision_mask = 12
 script = ExtResource("1_v6fml")
 accel = 50.0
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=405059077]
+z_index = 2
 texture = SubResource("GradientTexture2D_qu4a1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=365492730]
