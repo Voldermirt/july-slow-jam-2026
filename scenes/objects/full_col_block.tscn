@@ -17,6 +17,7 @@ animations = [{
 size = Vector2(16, 16)
 
 [node name="full_col_block" type="Node2D" unique_id=863357045]
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1488470973]
 sprite_frames = SubResource("SpriteFrames_ui06d")

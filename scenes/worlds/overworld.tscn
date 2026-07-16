@@ -1,3 +1,37 @@
 [gd_scene format=3 uid="uid://b6lo5vbif3op5"]
 
+[ext_resource type="PackedScene" uid="uid://db7r6ub843mmq" path="res://scenes/objects/full_col_block.tscn" id="1_8l66c"]
+[ext_resource type="PackedScene" uid="uid://dhh7o38hc12vb" path="res://scenes/markers/building_marker.tscn" id="2_8j1md"]
+[ext_resource type="PackedScene" uid="uid://bn6nskligjksi" path="res://scenes/Player.tscn" id="2_177g6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_177g6"]
+size = Vector2(1600, 16)
+
 [node name="overworld" type="Node2D" unique_id=1466800615]
+
+[node name="Collisions" type="Node2D" parent="." unique_id=525894052]
+
+[node name="full_col_block" parent="Collisions" unique_id=863357045 instance=ExtResource("1_8l66c")]
+position = Vector2(0, 68)
+
+[node name="AnimatedSprite2D" parent="Collisions/full_col_block" index="0" unique_id=1488470973]
+scale = Vector2(100, 1)
+
+[node name="CollisionShape2D" parent="Collisions/full_col_block/StaticBody2D" parent_id_path=PackedInt32Array(863357045, 1239645926) index="0" unique_id=793594492]
+shape = SubResource("RectangleShape2D_177g6")
+
+[node name="markers" type="Node2D" parent="." unique_id=913172250]
+
+[node name="building marker" parent="markers" unique_id=318934823 instance=ExtResource("2_8j1md")]
+position = Vector2(5, -100)
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" parent="markers/building marker" index="0" unique_id=1682072941]
+position = Vector2(0, 45.5)
+scale = Vector2(20, 14.312501)
+
+[node name="Player" parent="." unique_id=2124019400 instance=ExtResource("2_177g6")]
+speed = 250.0
+
+[editable path="Collisions/full_col_block"]
+[editable path="markers/building marker"]
