@@ -5,7 +5,7 @@ extends Area2D
 
 @onready var item_sprite: Sprite2D = $"Item Sprite"
 
-var selected_item_scene: PackedScene
+var selected_item_scene: PackedScene # this might wanna be a resource
 var item_data: Dictionary = {}
 var player_in_range: CharacterBody2D = null
 
