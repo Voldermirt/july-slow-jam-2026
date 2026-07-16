@@ -1,26 +1,43 @@
+# Acts like a shop manager
 extends Node2D
 
-@export var item_data : Resource
-@onready var display_sprite : Sprite2D = $Sprite2D
+# All possible items to choose from
+@export var item_pool : Array[Item] = []
+# Whether or not there is extra logic applied to item population
+@export var true_random_selection := false
+# Parent node for all the item stands
+@onready var item_stands: Node2D = $ItemStands
+# If we don't want all items completely randomized
+var remaining_pool : Array[Item] = []
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if item_data and display_sprite:
-		display_sprite.texture = item_data.texture
-		
+	remaining_pool = item_pool.duplicate()
+	populate_items()
 
-func _on_interact_component_triggered(interacting_body : Node2D) -> void:
-	if not item_data:
-		return
+func get_stands() -> Array[ShopItem]:
+	# Gotta make sure they're actually ShopItems
+	#return item_stands.get_children().filter(func(child): return child is ShopItem) as Array[ShopItem]
+	var stands : Array[ShopItem] = []
+	for child : Node2D in item_stands.get_children():
+		if child is ShopItem:
+			stands.append(child)
+	return stands
+
+func get_random_item() -> Item:
+	if true_random_selection:
+		return item_pool.pick_random()
 	
-	if interacting_body.is_in_group("player") and interacting_body.has_method("add_to_stack"):
-		interacting_body.add_to_stack(item_data)
-		clear_shop_stand()
+	# Select an item from the pool of remaining items
+	var idx = randi_range(0, len(remaining_pool) - 1)
+	var item := remaining_pool[idx]
+	remaining_pool.remove_at(idx)
+	if remaining_pool.is_empty():
+		remaining_pool = item_pool.duplicate()
+	
+	return item
 
-func clear_shop_stand() -> void:
-	item_data = null
-	if display_sprite:
-		display_sprite.texture = null
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func populate_items() -> void:
+	var stands := get_stands()
+	for stand in stands:
+		var item := get_random_item()
+		stand.stock_item(item)

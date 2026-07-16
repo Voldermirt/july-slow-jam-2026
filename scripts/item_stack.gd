@@ -1,4 +1,5 @@
 extends Node2D
+class_name ItemStack
 
 
 const STACK_ITEM := preload("res://scenes/item_on_stack.tscn")
