@@ -25,6 +25,8 @@ var jump_buffer_timer := 0.0
 var was_on_floor := false # Was the player on the floor last frame?
 var is_jumping := false
 
+var extern_impulse := Vector2.ZERO
+
 var last_velocity := Vector2.ZERO
 var facing_direction := Vector2.RIGHT
 
@@ -54,7 +56,7 @@ func _physics_process(delta: float) -> void:
 	horizontal_movement(delta)
 	jump(delta)
 	
-	#check_stack_stability(delta)
+	handle_impulse()
 	
 	apply_velocity(delta)
 	
@@ -107,6 +109,14 @@ func jump(delta: float):
 		velocity.y += gravity * delta
 		
 
+func handle_impulse():
+	if extern_impulse == Vector2.ZERO:
+		return
+	is_jumping = false
+	velocity = extern_impulse
+	extern_impulse = Vector2.ZERO
+	print(velocity)
+
 func apply_velocity(delta : float):
 	coyote_timer = max(coyote_timer - delta, 0)
 	jump_buffer_timer = max(jump_buffer_timer - delta, 0)
@@ -147,4 +157,13 @@ func _unhandled_input(event: InputEvent) -> void:
 func _input(event: InputEvent):
 	if (event.is_action_pressed("down") and is_on_floor()):
 		position.y += 1
+
+func apply_impulse(direction : Vector2, force : float) -> void:
+	# The acceleration will slow us way down in the x direction
+	# So some adjustment must be made?
+	# Uh... I'll just multiply the x value by some multiple of the acceleration rate?
+	# That seems like it'd work better than nothing, and I'd rather not totally
+	# 		rework the player movement logic to allow for large horizontal impulses.
+	extern_impulse.x = direction.x * force * accel / 1800
+	extern_impulse.y = direction.y * force# * accel# * 35
 	

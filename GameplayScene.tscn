@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://blxrhac0oesr8" path="res://items/test_item.tres" id="7_665kd"]
 [ext_resource type="Resource" uid="uid://br1gypir7g2e6" path="res://items/test_item_2.tres" id="8_casys"]
 [ext_resource type="Resource" uid="uid://b2nltvo0t2ua" path="res://items/ladder_item.tres" id="9_d8w3v"]
+[ext_resource type="Resource" uid="uid://bdthljguuyre" path="res://items/spring_item.tres" id="11_casys"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15q6v"]
 size = Vector2(768, 32)
@@ -69,16 +70,16 @@ time_to_ground_seconds = 0.28
 
 [node name="ShopWorldArea" parent="." unique_id=1914970356 instance=ExtResource("5_8jkjp")]
 position = Vector2(-300, 290)
-item_pool = Array[ExtResource("6_i8ldd")]([ExtResource("7_665kd"), ExtResource("8_casys"), ExtResource("9_d8w3v")])
+item_pool = Array[ExtResource("6_i8ldd")]([ExtResource("7_665kd"), ExtResource("8_casys"), ExtResource("9_d8w3v"), ExtResource("11_casys")])
 
 [node name="ShopItem" parent="." unique_id=556954040 instance=ExtResource("6_4wexh")]
 position = Vector2(433, 279)
-item_data = ExtResource("9_d8w3v")
+item_data = ExtResource("11_casys")
 
 [node name="ShopItem2" parent="." unique_id=389103783 instance=ExtResource("6_4wexh")]
 position = Vector2(669, 275)
-item_data = ExtResource("9_d8w3v")
+item_data = ExtResource("11_casys")
 
 [node name="ShopItem3" parent="." unique_id=325945277 instance=ExtResource("6_4wexh")]
 position = Vector2(559, 269)
-item_data = ExtResource("9_d8w3v")
+item_data = ExtResource("11_casys")

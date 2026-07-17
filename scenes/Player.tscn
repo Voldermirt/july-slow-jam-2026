@@ -19,7 +19,7 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjb4j"]
 size = Vector2(32, 32)
 
-[node name="Player" type="CharacterBody2D" unique_id=2124019400]
+[node name="Player" type="CharacterBody2D" unique_id=2124019400 groups=["player"]]
 collision_mask = 12
 script = ExtResource("1_v6fml")
 accel = 50.0
