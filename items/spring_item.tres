@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bdthljguuyre"]
+
+[ext_resource type="Script" uid="uid://bnmwo6dq5mx8d" path="res://scripts/item_resource.gd" id="1_u48de"]
+[ext_resource type="PackedScene" uid="uid://b0uiutf6i22l1" path="res://scenes/items/spring_item.tscn" id="1_wdpt2"]
+
+[sub_resource type="Gradient" id="Gradient_u48de"]
+offsets = PackedFloat32Array(0, 0.2440678, 0.47457626, 0.7084746, 1)
+colors = PackedColorArray(0.15, 0.15, 0.15, 1, 1, 1, 1, 1, 0.15, 0.15, 0.15, 1, 1, 1, 1, 1, 0.15, 0.15, 0.15, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wdpt2"]
+gradient = SubResource("Gradient_u48de")
+width = 24
+height = 24
+fill_to = Vector2(0, 1)
+
+[resource]
+script = ExtResource("1_u48de")
+sprite = SubResource("GradientTexture2D_wdpt2")
+min_value = 10
+max_value = 15
+instantiated_item = ExtResource("1_wdpt2")
+metadata/_custom_type_script = "uid://bnmwo6dq5mx8d"

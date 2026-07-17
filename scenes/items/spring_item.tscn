@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b0uiutf6i22l1"]
+
+[ext_resource type="Script" uid="uid://c3jrs8xsgsbu7" path="res://scripts/items/spring_item.gd" id="1_l2bv6"]
+[ext_resource type="PackedScene" uid="uid://c1owershenb8o" path="res://scenes/interactable_component.tscn" id="3_03oyl"]
+
+[sub_resource type="Gradient" id="Gradient_l2bv6"]
+offsets = PackedFloat32Array(0, 0.2440678, 0.47457626, 0.7084746, 1)
+colors = PackedColorArray(0.15, 0.15, 0.15, 1, 1, 1, 1, 1, 0.15, 0.15, 0.15, 1, 1, 1, 1, 1, 0.15, 0.15, 0.15, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_03oyl"]
+gradient = SubResource("Gradient_l2bv6")
+width = 24
+height = 24
+fill_to = Vector2(0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4lap"]
+size = Vector2(24, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_03oyl"]
+size = Vector2(24, 24)
+
+[node name="TestItem" type="RigidBody2D" unique_id=1357666788]
+collision_layer = 2
+collision_mask = 4
+input_pickable = true
+gravity_scale = 0.675
+script = ExtResource("1_l2bv6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1922339491]
+texture = SubResource("GradientTexture2D_03oyl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=214554434]
+shape = SubResource("RectangleShape2D_u4lap")
+
+[node name="InteractableComponent" parent="." unique_id=60683989 instance=ExtResource("3_03oyl")]
+collision_layer = 2
+
+[node name="CollisionShape2D" parent="InteractableComponent" index="0" unique_id=1634449250]
+shape = SubResource("RectangleShape2D_03oyl")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="body_entered" from="InteractableComponent" to="." method="_on_body_entered"]
+
+[editable path="InteractableComponent"]
