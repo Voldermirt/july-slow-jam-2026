@@ -11,17 +11,22 @@
 [ext_resource type="Texture2D" uid="uid://binv5c85b57dd" path="res://art/test_txtr_1.png" id="5_2s45h"]
 [ext_resource type="PackedScene" uid="uid://bgj1l2rrx3468" path="res://scenes/markers/order_marker.tscn" id="7_5qbd5"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_883o0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_e6hv3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
-[node name="overworld" type="Node" unique_id=780273464]
-process_mode = 3
-script = ExtResource("1_8l66c")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84sw8"]
+size = Vector2(64, 16)
 
-[node name="PUT_THE_LEVEL_HERE" parent="." unique_id=332570810 instance=ExtResource("2_177g6")]
-process_mode = 1
-
-[node name="PauseCanvasLayer" type="CanvasLayer" parent="." unique_id=524896007]
-process_mode = 2
-layer = 3
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_177g6"]
+size = Vector2(2486, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5qbd5"]
 size = Vector2(898, 187)
@@ -97,9 +102,9 @@ position = Vector2(286, -228)
 scale = Vector2(3, 3)
 texture = ExtResource("1_jq58b")
 
-[node name="apartments" type="Sprite2D" parent="ref sketches" unique_id=536401750]
+[node name="apartments sketch" type="Sprite2D" parent="ref sketches" unique_id=539163139]
 modulate = Color(0.6666667, 0.6784314, 0.65882355, 1)
-position = Vector2(3911, -792)
+position = Vector2(4782, -954)
 scale = Vector2(3, 3)
 texture = ExtResource("2_abuwv")
 
@@ -535,4 +540,3 @@ speed = 250.0
 [editable path="markers/building marker5"]
 [editable path="markers/building marker6"]
 [editable path="markers/door_marker"]
-
