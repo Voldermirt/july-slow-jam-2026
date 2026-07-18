@@ -74,12 +74,12 @@ item_pool = Array[ExtResource("6_i8ldd")]([ExtResource("7_665kd"), ExtResource("
 
 [node name="ShopItem" parent="." unique_id=556954040 instance=ExtResource("6_4wexh")]
 position = Vector2(433, 279)
-item_data = ExtResource("11_casys")
+item_data = ExtResource("9_d8w3v")
 
 [node name="ShopItem2" parent="." unique_id=389103783 instance=ExtResource("6_4wexh")]
 position = Vector2(669, 275)
-item_data = ExtResource("11_casys")
+item_data = ExtResource("9_d8w3v")
 
 [node name="ShopItem3" parent="." unique_id=325945277 instance=ExtResource("6_4wexh")]
 position = Vector2(559, 269)
-item_data = ExtResource("11_casys")
+item_data = ExtResource("9_d8w3v")

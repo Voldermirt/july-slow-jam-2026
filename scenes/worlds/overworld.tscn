@@ -1,3 +1,21 @@
 [gd_scene format=3 uid="uid://b6lo5vbif3op5"]
 
-[node name="overworld" type="Node2D" unique_id=1466800615]
+[ext_resource type="Script" uid="uid://gp5i0odrrw01" path="res://scripts/overworld.gd" id="1_8l66c"]
+[ext_resource type="PackedScene" uid="uid://bw6n5ok1uyv0e" path="res://GameplayScene.tscn" id="2_177g6"]
+[ext_resource type="PackedScene" uid="uid://bc1emk1hlgkdt" path="res://scenes/pause_menu.tscn" id="3_8j1md"]
+
+[node name="overworld" type="Node" unique_id=780273464]
+process_mode = 3
+script = ExtResource("1_8l66c")
+
+[node name="PUT_THE_LEVEL_HERE" parent="." unique_id=332570810 instance=ExtResource("2_177g6")]
+process_mode = 1
+
+[node name="PauseCanvasLayer" type="CanvasLayer" parent="." unique_id=524896007]
+process_mode = 2
+layer = 3
+
+[node name="PauseMenu" parent="PauseCanvasLayer" unique_id=801855277 instance=ExtResource("3_8j1md")]
+visible = false
+
+[connection signal="continue_pressed" from="PauseCanvasLayer/PauseMenu" to="." method="_on_pause_menu_continue_pressed"]
