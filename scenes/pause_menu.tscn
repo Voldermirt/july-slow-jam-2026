@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bc1emk1hlgkdt"]
+
+[ext_resource type="Script" uid="uid://dtlo0baqlnydu" path="res://scripts/pause_menu.gd" id="1_5d2l8"]
+[ext_resource type="Texture2D" uid="uid://cjpk2gf6n6e15" path="res://art/interface/pause_screen_background.png" id="1_n87rw"]
+[ext_resource type="Texture2D" uid="uid://cs7bvgshew8cx" path="res://art/interface/pause_screen_quit.png" id="2_7l7mv"]
+[ext_resource type="Texture2D" uid="uid://ca8twivk212yc" path="res://art/interface/pause_screen_continue.png" id="4_1s2dm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_15q6v"]
+texture = ExtResource("1_n87rw")
+
+[sub_resource type="ImageTexture" id="ImageTexture_88e76"]
+
+[node name="PauseMenu" type="Control" unique_id=801855277]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5d2l8")
+
+[node name="Panel" type="Panel" parent="." unique_id=2099457136]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_15q6v")
+
+[node name="Buttons" type="Control" parent="." unique_id=1307447129]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuitButton" type="TextureButton" parent="Buttons" unique_id=1570861480]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.353125
+anchor_top = 0.5888889
+anchor_right = 0.653125
+anchor_bottom = 0.73333335
+texture_normal = ExtResource("2_7l7mv")
+texture_pressed = SubResource("ImageTexture_88e76")
+metadata/_edit_use_anchors_ = true
+
+[node name="ContinueButton" type="TextureButton" parent="Buttons" unique_id=2105501758]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 156.0
+offset_right = 418.0
+offset_bottom = 208.0
+texture_normal = ExtResource("4_1s2dm")
+texture_pressed = SubResource("ImageTexture_88e76")
+
+[connection signal="pressed" from="Buttons/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Buttons/ContinueButton" to="." method="_on_continue_button_pressed"]
