@@ -17,6 +17,7 @@ animations = [{
 size = Vector2(100, 4)
 
 [node name="basic platform" type="Node2D" unique_id=62280139]
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=953697200]
 modulate = Color(1.540184e-06, 0.5840751, 0.594724, 1)
