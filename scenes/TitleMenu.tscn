@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://c51jmjacjutb6"]
+
+[ext_resource type="Script" uid="uid://dm1cv3m12mx8n" path="res://scripts/title_menu.gd" id="1_cvlrc"]
+[ext_resource type="Texture2D" uid="uid://xfa5t0isfvkq" path="res://art/interface/title_screen_background.png" id="1_ly241"]
+[ext_resource type="Texture2D" uid="uid://cm1kxeos8xc4b" path="res://art/interface/title_screen_credits.png" id="2_8g0qr"]
+[ext_resource type="Texture2D" uid="uid://camw63si58wtf" path="res://art/interface/title_screen_start.png" id="3_cvlrc"]
+[ext_resource type="Texture2D" uid="uid://b2nvk150s7pbl" path="res://art/interface/title_screen_quit.png" id="4_ye7mv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ugloe"]
+texture = ExtResource("1_ly241")
+
+[sub_resource type="ImageTexture" id="ImageTexture_ugloe"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mx5mb"]
+texture = ExtResource("1_ly241")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugloe"]
+bg_color = Color(0.5529412, 0.8901961, 0.3647059, 1)
+
+[node name="TitleMenu" type="Control" unique_id=212198270]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cvlrc")
+
+[node name="Panel" type="Panel" parent="." unique_id=1481518601]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ugloe")
+
+[node name="Control" type="Control" parent="." unique_id=275377646]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreditsButton" type="TextureButton" parent="Control" unique_id=1020091387]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 157.0
+offset_right = 385.0
+offset_bottom = 230.0
+texture_normal = ExtResource("2_8g0qr")
+texture_pressed = SubResource("ImageTexture_ugloe")
+
+[node name="StartButton" type="TextureButton" parent="Control" unique_id=150596434]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 81.0
+offset_right = 385.0
+offset_bottom = 154.0
+texture_normal = ExtResource("3_cvlrc")
+texture_pressed = SubResource("ImageTexture_ugloe")
+
+[node name="QuitButton" type="TextureButton" parent="Control" unique_id=137782592]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 234.0
+offset_right = 386.0
+offset_bottom = 307.0
+texture_normal = ExtResource("4_ye7mv")
+texture_pressed = SubResource("ImageTexture_ugloe")
+
+[node name="CreditsPanel" type="Panel" parent="." unique_id=787413220]
+custom_minimum_size = Vector2(480, 270)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mx5mb")
+
+[node name="Panel" type="Panel" parent="CreditsPanel" unique_id=356646927]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ugloe")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsPanel/Panel" unique_id=1431734176]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 22
+bbcode_enabled = true
+text = "[b]--- CREDITS ---[/b]
+- Spencer Henwood -
+- Hannah Horton -
+- Wren McEntire -
+- Ryan Matthews -
+- Elliot Nighting -"
+horizontal_alignment = 1
+
+[connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
+[connection signal="pressed" from="Control/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Control/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="gui_input" from="CreditsPanel" to="." method="_on_credits_panel_gui_input"]

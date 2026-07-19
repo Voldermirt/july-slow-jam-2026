@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c328i2doyun4c"]
+
+[ext_resource type="PackedScene" uid="uid://b6lo5vbif3op5" path="res://scenes/worlds/overworld.tscn" id="1_glms7"]
+[ext_resource type="Script" uid="uid://b2fgxv6lex8ij" path="res://scripts/game_manager.gd" id="1_udu3i"]
+[ext_resource type="PackedScene" uid="uid://bc1emk1hlgkdt" path="res://scenes/pause_menu.tscn" id="2_udu3i"]
+[ext_resource type="PackedScene" uid="uid://c51jmjacjutb6" path="res://scenes/TitleMenu.tscn" id="3_udu3i"]
+
+[node name="GameManager" type="Node" unique_id=1565701518 groups=["game_manager"]]
+process_mode = 3
+script = ExtResource("1_udu3i")
+
+[node name="TitleMenu" parent="." unique_id=212198270 instance=ExtResource("3_udu3i")]
+main_scene = ExtResource("1_glms7")
+
+[node name="PauseCanvasLayer" type="CanvasLayer" parent="." unique_id=1892235589]
+process_mode = 2
+
+[node name="PauseMenu" parent="PauseCanvasLayer" unique_id=801855277 instance=ExtResource("2_udu3i")]
+visible = false
