@@ -156,7 +156,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 func _input(event: InputEvent):
 	if (event.is_action_pressed("down") and is_on_floor()):
-		position.y += 1
+		position.y += 2
 
 func apply_impulse(direction : Vector2, force : float) -> void:
 	# The acceleration will slow us way down in the x direction
