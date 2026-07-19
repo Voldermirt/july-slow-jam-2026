@@ -304,6 +304,34 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3tdmy"]
 size = Vector2(120, 4)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_shyqm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_e6hv3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbb1v"]
+size = Vector2(168, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhttr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_e6hv3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qitv"]
+size = Vector2(62, 4)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_imosk"]
 animations = [{
 "frames": [{
@@ -336,7 +364,6 @@ scale = Vector2(3, 3)
 texture = ExtResource("2_abuwv")
 
 [node name="markers" type="Node2D" parent="." unique_id=913172250]
-visible = false
 
 [node name="shop marker" parent="markers" unique_id=318934823 instance=ExtResource("2_8j1md")]
 position = Vector2(5, -100)
@@ -1100,11 +1127,22 @@ position = Vector2(2774, -822)
 [node name="AnimatedSprite2D" parent="Collisions/balcony-roof1" index="0" unique_id=953697200]
 position = Vector2(-6.0000544, 0)
 scale = Vector2(10.500017, 0.24999999)
-sprite_frames = SubResource("SpriteFrames_imosk")
+sprite_frames = SubResource("SpriteFrames_shyqm")
 
 [node name="CollisionShape2D" parent="Collisions/balcony-roof1/StaticBody2D" parent_id_path=PackedInt32Array(1216599220, 1092522839) index="0" unique_id=75527162]
 position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_rtg1y")
+shape = SubResource("RectangleShape2D_gbb1v")
+
+[node name="fire-escape1" parent="Collisions" unique_id=1823985745 instance=ExtResource("3_orqdp")]
+position = Vector2(2630, -762)
+
+[node name="AnimatedSprite2D" parent="Collisions/fire-escape1" index="0" unique_id=953697200]
+position = Vector2(-0.00015258789, 0)
+scale = Vector2(3.8750124, 0.24999999)
+sprite_frames = SubResource("SpriteFrames_uhttr")
+
+[node name="CollisionShape2D" parent="Collisions/fire-escape1/StaticBody2D" parent_id_path=PackedInt32Array(1823985745, 1092522839) index="0" unique_id=75527162]
+shape = SubResource("RectangleShape2D_8qitv")
 
 [node name="balcony-roof2" parent="Collisions" unique_id=1337297828 instance=ExtResource("3_orqdp")]
 position = Vector2(2978, -822)
@@ -1665,6 +1703,7 @@ speed = 250.0
 [editable path="Collisions/stoplight3"]
 [editable path="Collisions/balcony1"]
 [editable path="Collisions/balcony-roof1"]
+[editable path="Collisions/fire-escape1"]
 [editable path="Collisions/balcony-roof2"]
 [editable path="Collisions/balcony2"]
 [editable path="Collisions/balcony3"]
