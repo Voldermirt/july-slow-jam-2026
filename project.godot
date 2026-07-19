@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="July Slow Jam 2026"
-run/main_scene="uid://b6lo5vbif3op5"
+run/main_scene="uid://c328i2doyun4c"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=640
 window/size/viewport_height=360
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/stretch/mode="viewport"
 
 [dotnet]
@@ -33,6 +35,7 @@ version_control/autoload_on_startup=true
 [global_group]
 
 player=""
+game_manager=""
 
 [input]
 
