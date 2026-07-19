@@ -2,13 +2,13 @@ extends CharacterBody2D
 class_name Player
 
 @export_group("Movement Parameters")
-@export var speed : float = 120 # Pixels per second
+@export var speed : float = 325 # Pixels per second
 @export var accel : float = 80 # Pixels per second per second
 @export_subgroup("Jump Parameters")
 # Used to calculate the actual physical parameters for the jump
 @export var jump_height : float = 128 # In pixels
-@export var time_to_peak_seconds : float = 0.5 # In seconds, obviously
-@export var time_to_ground_seconds : float = 0.25 # Derives the general gravity
+@export var time_to_peak_seconds : float = 0.4 # In seconds, obviously
+@export var time_to_ground_seconds : float = 0.28 # Derives the general gravity
 @export var variable_jump_height := true
 @export var max_coyote_time : float = 0.05
 @export var max_jump_buffer : float = 0.05

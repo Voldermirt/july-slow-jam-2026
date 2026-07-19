@@ -64,9 +64,6 @@ texture = ExtResource("1_mckg6")
 
 [node name="Player" parent="." unique_id=2124019400 instance=ExtResource("2_n4mhe")]
 position = Vector2(224.99997, 292)
-speed = 325.0
-time_to_peak_seconds = 0.4
-time_to_ground_seconds = 0.28
 
 [node name="ShopWorldArea" parent="." unique_id=1914970356 instance=ExtResource("5_8jkjp")]
 position = Vector2(-300, 290)
