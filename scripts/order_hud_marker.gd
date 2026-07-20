@@ -5,11 +5,13 @@ var target_order : OrderManager.Order = null
 
 var margin := 52.0
 
+var game_manager : Game
 @onready var item_icon: Sprite2D = $Offset/ItemIcon
 @onready var offset : Node2D = $Offset
 
 
 func _ready() -> void:
+	game_manager = get_tree().get_first_node_in_group("game_manager")
 	offset.position.x = 180 - margin / 2 #get_viewport().get_visible_rect().size.y - margin
 
 func set_order(new_order : OrderManager.Order) -> void:
@@ -58,6 +60,8 @@ func calculate_intersection_offset(rect, vec) -> Vector2:
 	
 
 func _process(_delta: float) -> void:
+	if not game_manager.game_running:
+		return
 	if not target_order:
 		return
 	visible = !is_dest_on_screen()

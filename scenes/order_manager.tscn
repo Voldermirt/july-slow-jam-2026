@@ -6,11 +6,12 @@
 [ext_resource type="Resource" uid="uid://b2nltvo0t2ua" path="res://items/ladder_item.tres" id="3_rahur"]
 [ext_resource type="Resource" uid="uid://bdthljguuyre" path="res://items/spring_item.tres" id="4_7s4c3"]
 
-[node name="OrderManager" type="Node" unique_id=1411979919]
+[node name="OrderManager" type="Node" unique_id=1411979919 groups=["order_manager"]]
 script = ExtResource("1_v500a")
 item_pool = Array[ExtResource("2_er8k8")]([ExtResource("3_rahur"), ExtResource("4_7s4c3")])
 
 [node name="OrderHUD" type="CanvasLayer" parent="." unique_id=1849571761]
+process_mode = 1
 follow_viewport_enabled = true
 
 [node name="MarkerParent" type="Node2D" parent="OrderHUD" unique_id=2117529125]

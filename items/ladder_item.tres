@@ -14,6 +14,7 @@ fill_from = Vector2(0.12820514, 0.61538464)
 
 [resource]
 script = ExtResource("1_3ioet")
+name = "ladder"
 sprite = SubResource("GradientTexture2D_atvrc")
 min_value = 3
 max_value = 6

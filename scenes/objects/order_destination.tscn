@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://brlrsu5pjcnja"]
+
+[ext_resource type="Script" uid="uid://be28kswqyqmbp" path="res://scripts/order_destination.gd" id="1_cfn7a"]
+[ext_resource type="PackedScene" uid="uid://c1owershenb8o" path="res://scenes/interactable_component.tscn" id="1_iljj3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfn7a"]
+size = Vector2(64, 64)
+
+[node name="OrderDestination" type="Node2D" unique_id=1973646687]
+script = ExtResource("1_cfn7a")
+
+[node name="InteractableComponent" parent="." unique_id=60683989 instance=ExtResource("1_iljj3")]
+
+[node name="CollisionShape2D" parent="InteractableComponent" index="0" unique_id=1634449250]
+shape = SubResource("RectangleShape2D_cfn7a")
+
+[connection signal="on_interact" from="InteractableComponent" to="." method="_on_interactable_component_on_interact"]
+
+[editable path="InteractableComponent"]
