@@ -27,9 +27,11 @@ fill_to = Vector2(1, 0.7905983)
 [node name="OrderHudMarker" type="Node2D" unique_id=1999824660]
 script = ExtResource("1_bfjj6")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=440294380]
+[node name="Offset" type="Node2D" parent="." unique_id=755602245]
+
+[node name="Background" type="Sprite2D" parent="Offset" unique_id=440294380]
 texture = SubResource("GradientTexture2D_h3mav")
 
-[node name="ItemIcon" type="Sprite2D" parent="." unique_id=1575029482]
+[node name="ItemIcon" type="Sprite2D" parent="Offset" unique_id=1575029482]
 scale = Vector2(2, 2)
 texture = SubResource("GradientTexture2D_hrvr2")

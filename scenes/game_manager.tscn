@@ -4,16 +4,28 @@
 [ext_resource type="Script" uid="uid://b2fgxv6lex8ij" path="res://scripts/game_manager.gd" id="1_udu3i"]
 [ext_resource type="PackedScene" uid="uid://bc1emk1hlgkdt" path="res://scenes/pause_menu.tscn" id="2_udu3i"]
 [ext_resource type="PackedScene" uid="uid://c51jmjacjutb6" path="res://scenes/TitleMenu.tscn" id="3_udu3i"]
+[ext_resource type="PackedScene" uid="uid://b3nxpf2j4f5yk" path="res://scenes/order_manager.tscn" id="5_eaq8r"]
 
 [node name="GameManager" type="Node" unique_id=1565701518 groups=["game_manager"]]
 process_mode = 3
 script = ExtResource("1_udu3i")
+main_scene = ExtResource("1_glms7")
 
 [node name="TitleMenu" parent="." unique_id=212198270 instance=ExtResource("3_udu3i")]
-main_scene = ExtResource("1_glms7")
+process_mode = 1
+
+[node name="OrderManager" parent="." unique_id=1411979919 instance=ExtResource("5_eaq8r")]
+process_mode = 1
 
 [node name="PauseCanvasLayer" type="CanvasLayer" parent="." unique_id=1892235589]
 process_mode = 2
+layer = 3
 
 [node name="PauseMenu" parent="PauseCanvasLayer" unique_id=801855277 instance=ExtResource("2_udu3i")]
 visible = false
+
+[node name="OrderTimer" type="Timer" parent="." unique_id=1643203353]
+process_mode = 1
+wait_time = 10.0
+
+[connection signal="timeout" from="OrderTimer" to="." method="_on_order_timer_timeout"]
