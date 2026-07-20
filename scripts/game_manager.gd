@@ -50,7 +50,7 @@ func change_scene_to_packed(to : PackedScene, unload_current := false):
 
 func restore_scene():
 	if not unloaded_scene:
-		push_error("Can't restore nonexistant scene!")
+		push_error("Can't restore nonexistent scene!")
 		return
 	
 	current_scene.queue_free()

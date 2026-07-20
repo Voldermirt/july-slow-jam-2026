@@ -17,7 +17,7 @@ func stock_item(new_item : Item) -> void:
 	if not new_item:
 		return
 	
-	item_data = Item.new(new_item.sprite, new_item.min_value, new_item.max_value, new_item.instantiated_item)
+	item_data = Item.new(new_item.name, new_item.sprite, new_item.min_value, new_item.max_value, new_item.instantiated_item)
 	#item_data.sprite = new_item.sprite
 	#item_data.instantiated_item = new_item.instantiated_item
 	#item_data.min_value = new_item.min_value

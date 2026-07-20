@@ -15,6 +15,7 @@ fill_to = Vector2(0, 1)
 
 [resource]
 script = ExtResource("1_u48de")
+name = "spring"
 sprite = SubResource("GradientTexture2D_wdpt2")
 min_value = 10
 max_value = 15

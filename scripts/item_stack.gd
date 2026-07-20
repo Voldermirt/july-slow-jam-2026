@@ -87,7 +87,6 @@ func pop_item(dir := Vector2.ZERO) -> void:
 	
 	height -= 1
 	
-
 func pop_items(num_items : int, dir := Vector2.ZERO) -> void:
 	for i in range(num_items):
 		pop_item(dir)
@@ -96,6 +95,15 @@ func get_top_item() -> Node2D:
 	if height == 0:
 		return null
 	return items.get_node("Item_%s" % str(height - 1))
+
+func remove_top_item():
+	if height == 0:
+		return
+	
+	var stack_item = get_top_item()
+	stack_item.queue_free()
+	
+	height -= 1
 
 func get_height() -> int:
 	return height

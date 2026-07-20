@@ -63,6 +63,16 @@ func fulfill_order(order_dest : Node2D):
 	
 	update_order_hud()
 
+func order_destination_interacted(order_dest : Node2D, player : Player):
+	var order := get_order_from_dest(order_dest)
+	var player_top_item := player.get_top_item()
+	if not player_top_item:
+		return
+	
+	if order.item.name == player_top_item.name:
+		player.remove_top_item()
+		fulfill_order(order_dest)
+
 func update_order_hud():
 	var markers = marker_parent.get_children() as Array[OrderHudMarker]
 	for i in range(max_simultaneous_orders):

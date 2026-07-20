@@ -158,6 +158,12 @@ func _input(event: InputEvent):
 	if (event.is_action_pressed("down") and is_on_floor()):
 		position.y += 2
 
+func get_top_item() -> Item:
+	return item_stack.get_top_item().item_data
+
+func remove_top_item():
+	item_stack.remove_top_item()
+
 func apply_impulse(direction : Vector2, force : float) -> void:
 	# The acceleration will slow us way down in the x direction
 	# So some adjustment must be made?
