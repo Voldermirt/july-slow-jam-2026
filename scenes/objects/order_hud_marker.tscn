@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bo0ig7uo8s7w8"]
+
+[ext_resource type="Script" uid="uid://ctcyqnmfhup43" path="res://scripts/order_hud_marker.gd" id="1_bfjj6"]
+
+[sub_resource type="Gradient" id="Gradient_h3mav"]
+offsets = PackedFloat32Array(0, 0.6779661, 0.7118644, 1)
+colors = PackedColorArray(1, 1, 1, 0.78431374, 1, 1, 1, 0.78431374, 1, 1, 1, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h3mav"]
+gradient = SubResource("Gradient_h3mav")
+width = 48
+height = 48
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_bfjj6"]
+offsets = PackedFloat32Array(0, 0.50508475, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hrvr2"]
+gradient = SubResource("Gradient_bfjj6")
+width = 16
+height = 16
+fill_from = Vector2(0, 0.26068377)
+fill_to = Vector2(1, 0.7905983)
+
+[node name="OrderHudMarker" type="Node2D" unique_id=1999824660]
+script = ExtResource("1_bfjj6")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=440294380]
+texture = SubResource("GradientTexture2D_h3mav")
+
+[node name="ItemIcon" type="Sprite2D" parent="." unique_id=1575029482]
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_hrvr2")
