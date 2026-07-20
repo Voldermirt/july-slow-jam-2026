@@ -3,12 +3,16 @@ class_name Game
 
 @export var max_game_time_seconds := 120.0
 @export var main_scene : PackedScene
+@export var day_over_screen : PackedScene
 
 var game_time_left : float
 var game_running := false
 
 var can_pause := false
 var unloaded_scene : Node = null
+
+var score := 0
+var current_day := 1
 
 @onready var current_scene : Node = $TitleMenu
 @onready var pause_menu: Control = $PauseCanvasLayer/PauseMenu
@@ -25,6 +29,7 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if game_running:
 		game_time_left -= delta
+		print(game_time_left)
 		if game_time_left <= 0.0:
 			end_game()
 
@@ -69,7 +74,32 @@ func start_game():
 
 func end_game():
 	game_running = false
+	can_pause = false
+	set_pause(false) # Just to be sure ?
+	order_timer.stop()
+	
+	change_scene_to_packed(day_over_screen)
+	await get_tree().process_frame
+	current_scene.connect("continue_game", _on_continue_pressed)
+	current_scene.set_values(current_day, score)
 
+func reset():
+	order_manager.reset()
+	game_time_left = max_game_time_seconds
+	score = 0
+	if unloaded_scene:
+		unloaded_scene.queue_free()
+		unloaded_scene = null
 
 func _on_order_timer_timeout() -> void:
 	order_manager.create_order()
+
+func _on_order_manager_order_fulfilled(value: int) -> void:
+	score += value
+
+func _on_continue_pressed():
+	reset()
+	if current_scene.continue_game.is_connected(_on_continue_pressed):
+		current_scene.continue_game.disconnect(_on_continue_pressed)
+	current_day += 1
+	start_game()

@@ -1,6 +1,8 @@
 extends Node
 class_name OrderManager
 
+signal order_fulfilled(value : int)
+
 # Items to draw from when completing orders
 @export var item_pool : Array[Item] = []
 @export var max_simultaneous_orders := 3
@@ -62,6 +64,7 @@ func fulfill_order(order_dest : Node2D):
 		order_queue.erase(completed_order)
 	
 	update_order_hud()
+	
 
 func order_destination_interacted(order_dest : Node2D, player : Player):
 	var order := get_order_from_dest(order_dest)
@@ -72,6 +75,7 @@ func order_destination_interacted(order_dest : Node2D, player : Player):
 	if order.item.name == player_top_item.name:
 		player.remove_top_item()
 		fulfill_order(order_dest)
+		order_fulfilled.emit(order.item.value)
 
 func update_order_hud():
 	var markers = marker_parent.get_children() as Array[OrderHudMarker]
@@ -82,6 +86,13 @@ func update_order_hud():
 		else:
 			order = null
 		markers[i].set_order(order)
+
+func reset():
+	order_queue = []
+	num_completed = 0
+	for m : OrderHudMarker in marker_parent.get_children():
+		m.visible = false
+		m.target_order = null
 
 class Order: # Family genus species
 	var item : Item

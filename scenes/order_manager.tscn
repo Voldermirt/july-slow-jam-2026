@@ -11,6 +11,7 @@ script = ExtResource("1_v500a")
 item_pool = Array[ExtResource("2_er8k8")]([ExtResource("3_rahur"), ExtResource("4_7s4c3")])
 
 [node name="OrderHUD" type="CanvasLayer" parent="." unique_id=1849571761]
+process_mode = 1
 follow_viewport_enabled = true
 
 [node name="MarkerParent" type="Node2D" parent="OrderHUD" unique_id=2117529125]

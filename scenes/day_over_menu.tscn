@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dspb7hf3kj7bl"]
+
+[ext_resource type="Script" uid="uid://bfn22yur2kh83" path="res://scripts/day_over_menu.gd" id="1_s3xls"]
+[ext_resource type="Texture2D" uid="uid://xfa5t0isfvkq" path="res://art/interface/title_screen_background.png" id="2_wgck3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ugloe"]
+texture = ExtResource("2_wgck3")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15q6v"]
+bg_color = Color(0.5529412, 0.8901961, 0.3647059, 1)
+
+[node name="DayOverScreen" type="Control" unique_id=212198270]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s3xls")
+
+[node name="Panel" type="Panel" parent="." unique_id=1481518601]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ugloe")
+
+[node name="Panel2" type="Panel" parent="." unique_id=1756489754]
+custom_minimum_size = Vector2(576, 288)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_15q6v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1016681799]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="DayOverLabel" type="Label" parent="VBoxContainer" unique_id=1603060855]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "DAY X OVER!"
+horizontal_alignment = 1
+
+[node name="ScoreAccumulatedLabel" type="Label" parent="VBoxContainer" unique_id=2121929416]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Score: XX"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1334993170]
+layout_mode = 2
+text = "
+Press ENTER to continue to the next day
+Press ESCAPE to quit the game"
+horizontal_alignment = 1
