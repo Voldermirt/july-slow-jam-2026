@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b3nxpf2j4f5yk"]
+
+[ext_resource type="Script" uid="uid://b364i0ucc026l" path="res://scripts/order_manager.gd" id="1_v500a"]
+
+[node name="OrderManager" type="Node" unique_id=1411979919]
+script = ExtResource("1_v500a")
+
+[node name="OrderHUD" type="CanvasLayer" parent="." unique_id=1849571761]
+layer = 2
