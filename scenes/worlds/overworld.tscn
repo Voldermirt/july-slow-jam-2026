@@ -580,11 +580,74 @@ position = Vector2(1912, -144)
 [node name="order marker8" parent="markers" unique_id=1095498004 instance=ExtResource("7_5qbd5")]
 position = Vector2(2364, -325)
 
+[node name="order marker10" parent="markers" unique_id=1242866845 instance=ExtResource("7_5qbd5")]
+position = Vector2(2767, -504)
+
+[node name="order marker11" parent="markers" unique_id=2093158934 instance=ExtResource("7_5qbd5")]
+position = Vector2(2972, -504)
+
+[node name="order marker12" parent="markers" unique_id=895839671 instance=ExtResource("7_5qbd5")]
+position = Vector2(2767, -736)
+
+[node name="order marker13" parent="markers" unique_id=1601958749 instance=ExtResource("7_5qbd5")]
+position = Vector2(2972, -736)
+
+[node name="order marker14" parent="markers" unique_id=983910515 instance=ExtResource("7_5qbd5")]
+position = Vector2(3518, -504)
+
+[node name="order marker15" parent="markers" unique_id=479960803 instance=ExtResource("7_5qbd5")]
+position = Vector2(3723, -504)
+
+[node name="order marker16" parent="markers" unique_id=265875251 instance=ExtResource("7_5qbd5")]
+position = Vector2(3518, -736)
+
+[node name="order marker17" parent="markers" unique_id=1738127855 instance=ExtResource("7_5qbd5")]
+position = Vector2(3723, -736)
+
+[node name="order marker18" parent="markers" unique_id=1942326230 instance=ExtResource("7_5qbd5")]
+position = Vector2(4027, -504)
+
+[node name="order marker19" parent="markers" unique_id=205416874 instance=ExtResource("7_5qbd5")]
+position = Vector2(4232, -504)
+
+[node name="order marker20" parent="markers" unique_id=2010240604 instance=ExtResource("7_5qbd5")]
+position = Vector2(4027, -736)
+
+[node name="order marker21" parent="markers" unique_id=256892758 instance=ExtResource("7_5qbd5")]
+position = Vector2(4232, -736)
+
+[node name="order marker24" parent="markers" unique_id=2119894460 instance=ExtResource("7_5qbd5")]
+position = Vector2(5331, -729)
+
+[node name="order marker25" parent="markers" unique_id=232687837 instance=ExtResource("7_5qbd5")]
+position = Vector2(5536, -729)
+
+[node name="order marker26" parent="markers" unique_id=325711638 instance=ExtResource("7_5qbd5")]
+position = Vector2(5331, -961)
+
+[node name="order marker27" parent="markers" unique_id=6599095 instance=ExtResource("7_5qbd5")]
+position = Vector2(5536, -961)
+
+[node name="order marker22" parent="markers" unique_id=1735780389 instance=ExtResource("7_5qbd5")]
+position = Vector2(4027, -1026)
+
+[node name="order marker23" parent="markers" unique_id=1790922437 instance=ExtResource("7_5qbd5")]
+position = Vector2(4232, -1026)
+
+[node name="order marker9" parent="markers" unique_id=224766200 instance=ExtResource("7_5qbd5")]
+position = Vector2(353, 0)
+
 [node name="hazard_marker" parent="markers" unique_id=1902817344 instance=ExtResource("7_883o0")]
 position = Vector2(2625, -795)
 
 [node name="hazard_marker2" parent="markers" unique_id=1622767368 instance=ExtResource("7_883o0")]
 position = Vector2(3258, -336)
+
+[node name="hazard_marker7" parent="markers" unique_id=513370956 instance=ExtResource("7_883o0")]
+position = Vector2(764, -387)
+
+[node name="hazard_marker8" parent="markers" unique_id=62302167 instance=ExtResource("7_883o0")]
+position = Vector2(1492, -299)
 
 [node name="hazard_marker3" parent="markers" unique_id=1332724660 instance=ExtResource("7_883o0")]
 position = Vector2(4537, -334)

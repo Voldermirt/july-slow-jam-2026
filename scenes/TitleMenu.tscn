@@ -71,6 +71,7 @@ texture_normal = ExtResource("4_ye7mv")
 texture_pressed = SubResource("ImageTexture_ugloe")
 
 [node name="CreditsPanel" type="Panel" parent="." unique_id=787413220]
+visible = false
 custom_minimum_size = Vector2(480, 270)
 layout_mode = 1
 anchors_preset = 8
