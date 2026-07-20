@@ -36,6 +36,7 @@ version_control/autoload_on_startup=true
 
 player=""
 game_manager=""
+order_destination=""
 
 [input]
 

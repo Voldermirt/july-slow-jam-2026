@@ -3,13 +3,13 @@ class_name OrderManager
 
 # Items to draw from when completing orders
 @export var item_pool : Array[Item] = []
-# Parent node for all the destination nodes
-@export var destination_parent : Node = null
 @export var max_simultaneous_orders := 3
 
 # Enqueue at end, dequeue at beginning
 var order_queue : Array[Order] = []
 var num_completed := 0
+
+@onready var marker_parent: Node2D = $OrderHUD/MarkerParent
 
 func is_destination_free(dest : Node2D):
 	for order : Order in order_queue:
@@ -31,14 +31,21 @@ func get_order_from_dest(dest : Node2D) -> Order:
 	return null
 
 func create_order():
-	if len(order_queue) == destination_parent.get_child_count():
+	var destinations := get_tree().get_nodes_in_group("order_destination")
+	print(destinations)
+	if len(order_queue) == len(destinations):
 		print("Everyone has already ordered something!")
 		return
 	
 	var order_item := item_pool.pick_random() as Item
-	var available_destinations = destination_parent.get_children().filter(func (dest): is_destination_free(dest))
+	var available_destinations = []#destinations.filter(func (dest): is_destination_free(dest))
+	for d in destinations:
+		if is_destination_free(d):
+			available_destinations.append(d)
 	var order_dest : Node2D = available_destinations.pick_random()
 	var new_order := Order.new(order_item, order_dest) # This band has some good songs
+	
+	print(new_order.destination)
 	
 	var should_update_hud := len(order_queue) < max_simultaneous_orders
 	
@@ -57,7 +64,14 @@ func fulfill_order(order_dest : Node2D):
 	update_order_hud()
 
 func update_order_hud():
-	pass
+	var markers = marker_parent.get_children() as Array[OrderHudMarker]
+	for i in range(max_simultaneous_orders):
+		var order : Order
+		if i < len(order_queue):
+			order = order_queue[i]
+		else:
+			order = null
+		markers[i].set_order(order)
 
 class Order: # Family genus species
 	var item : Item

@@ -1,9 +1,25 @@
 [gd_scene format=3 uid="uid://b3nxpf2j4f5yk"]
 
 [ext_resource type="Script" uid="uid://b364i0ucc026l" path="res://scripts/order_manager.gd" id="1_v500a"]
+[ext_resource type="Script" uid="uid://bnmwo6dq5mx8d" path="res://scripts/item_resource.gd" id="2_er8k8"]
+[ext_resource type="PackedScene" uid="uid://bo0ig7uo8s7w8" path="res://scenes/objects/order_hud_marker.tscn" id="2_hrvr2"]
+[ext_resource type="Resource" uid="uid://b2nltvo0t2ua" path="res://items/ladder_item.tres" id="3_rahur"]
+[ext_resource type="Resource" uid="uid://bdthljguuyre" path="res://items/spring_item.tres" id="4_7s4c3"]
 
 [node name="OrderManager" type="Node" unique_id=1411979919]
 script = ExtResource("1_v500a")
+item_pool = Array[ExtResource("2_er8k8")]([ExtResource("3_rahur"), ExtResource("4_7s4c3")])
 
 [node name="OrderHUD" type="CanvasLayer" parent="." unique_id=1849571761]
-layer = 2
+follow_viewport_enabled = true
+
+[node name="MarkerParent" type="Node2D" parent="OrderHUD" unique_id=2117529125]
+
+[node name="OrderHudMarker" parent="OrderHUD/MarkerParent" unique_id=1999824660 instance=ExtResource("2_hrvr2")]
+visible = false
+
+[node name="OrderHudMarker2" parent="OrderHUD/MarkerParent" unique_id=477739225 instance=ExtResource("2_hrvr2")]
+visible = false
+
+[node name="OrderHudMarker3" parent="OrderHUD/MarkerParent" unique_id=270154258 instance=ExtResource("2_hrvr2")]
+visible = false
