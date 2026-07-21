@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b6lo5vbif3op5"]
 
 [ext_resource type="PackedScene" uid="uid://db7r6ub843mmq" path="res://scenes/objects/full_col_block.tscn" id="1_8l66c"]
-[ext_resource type="Script" uid="uid://caw4jjtnfkmrp" path="res://scripts/overworld.gd" id="1_arabk"]
 [ext_resource type="Texture2D" uid="uid://dnpus3w7i3uri" path="res://art/backgrounds/outdoors.png" id="1_dhfyp"]
 [ext_resource type="Texture2D" uid="uid://d22ac7e24jd2p" path="res://art/sketches/overworld outskirts.png" id="1_jq58b"]
 [ext_resource type="PackedScene" uid="uid://dhh7o38hc12vb" path="res://scenes/markers/building_marker.tscn" id="2_8j1md"]
@@ -433,7 +432,6 @@ size = Vector2(94.729126, 7.0730286)
 size = Vector2(492.3252, 4)
 
 [node name="overworld" type="Node2D" unique_id=1466800615]
-script = ExtResource("1_arabk")
 
 [node name="Outdoors" type="Sprite2D" parent="." unique_id=1487654485]
 position = Vector2(2395, -902)

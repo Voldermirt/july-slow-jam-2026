@@ -11,7 +11,6 @@ extends Node2D
 var remaining_pool : Array[Item] = []
 
 func _ready() -> void:
-	MusicPlayer.play("shop")
 	remaining_pool = item_pool.duplicate()
 	populate_items()
 
