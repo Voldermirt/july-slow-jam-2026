@@ -107,6 +107,7 @@ func start_game():
 	order_manager.load_destination_positions()
 	order_manager.create_order()
 	order_timer.start()
+	MusicPlayer.play("overworld")
 	
 	game_running = true
 	can_pause = true
@@ -116,6 +117,7 @@ func end_game():
 	can_pause = false
 	set_pause(false) # Just to be sure ?
 	order_timer.stop()
+	MusicPlayer.stop()
 	
 	change_scene_to_packed(day_over_screen)
 	await get_tree().process_frame

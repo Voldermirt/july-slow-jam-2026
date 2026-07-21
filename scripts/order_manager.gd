@@ -70,6 +70,7 @@ func fulfill_order(order_dest : Vector2):
 	
 
 func order_destination_interacted(order_dest : Vector2, player : Player):
+	print("a")
 	var order := get_order_from_dest(order_dest)
 	if not order:
 		return
@@ -77,7 +78,10 @@ func order_destination_interacted(order_dest : Vector2, player : Player):
 	if not player_top_item:
 		return
 	
+	print("b")
+	
 	if order.item.name == player_top_item.name:
+		print("c")
 		player.remove_top_item()
 		fulfill_order(order_dest)
 		order_fulfilled.emit(player_top_item.value)

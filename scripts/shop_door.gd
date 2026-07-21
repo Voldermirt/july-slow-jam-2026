@@ -26,7 +26,9 @@ func exit_shop():
 func _on_interactable_component_on_interact(_player: Player) -> void:
 	if door_mode == DOOR_MODE.ENTER:
 		player.set_stack_stability(true)
+		MusicPlayer.play("shop")
 		enter_shop()
 	elif door_mode == DOOR_MODE.EXIT:
 		player.set_stack_stability(false)
+		MusicPlayer.play("overworld")
 		exit_shop()

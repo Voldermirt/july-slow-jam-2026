@@ -1,6 +1,7 @@
 extends Control
 
 @onready var credits_panel: Panel = $CreditsPanel
+@onready var instruction_panel: Panel = $InstructionPanel
 
 
 func _on_credits_button_pressed() -> void:
@@ -8,8 +9,12 @@ func _on_credits_button_pressed() -> void:
 
 
 func _on_start_button_pressed() -> void:
-	get_tree().get_first_node_in_group("game_manager").start_game()
+	instruction_panel.visible = true
 
+func _process(_delta: float) -> void:
+	if Input.is_anything_pressed():
+		if instruction_panel.visible:
+			get_tree().get_first_node_in_group("game_manager").start_game()
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()

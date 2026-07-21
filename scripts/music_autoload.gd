@@ -12,3 +12,7 @@ func play(song: String):
 		"overworld":
 			shop_music.stop()
 			overworld_music.play()
+
+func stop():
+	overworld_music.stop()
+	shop_music.stop()
