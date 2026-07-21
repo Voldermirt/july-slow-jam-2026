@@ -1,4 +1,6 @@
 # July-slow-jam-2026
+## Game Name
+**Shopabolic**
 ## Description
 A silly 2D delivery platformer where you dodge bombs to deliver items.
 ## Controls
@@ -13,3 +15,5 @@ Dodge Bombs
 ## Built with
 * [Godot Engine](https://godotengine.org)
 * GDScript
+* Art Made with Aseprite
+* Music Made with FL Studio and Ableton
