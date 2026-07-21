@@ -735,19 +735,19 @@ rotation = 0.06478477
 shape = SubResource("RectangleShape2D_2s45h")
 
 [node name="stair1" parent="Collisions" unique_id=1269616846 instance=ExtResource("3_orqdp")]
-position = Vector2(-142.99396, -698.74347)
+position = Vector2(1599.53, 242.07782)
 
 [node name="stair2" parent="Collisions" unique_id=323308637 instance=ExtResource("3_orqdp")]
-position = Vector2(-1238.791, -555.85565)
+position = Vector2(777.25464, 366.10217)
 
 [node name="stair3" parent="Collisions" unique_id=1020449440 instance=ExtResource("3_orqdp")]
-position = Vector2(-1587.8385, -714.48004)
+position = Vector2(630.99084, 367.8183)
 
 [node name="stair4" parent="Collisions" unique_id=712437913 instance=ExtResource("3_orqdp")]
-position = Vector2(-1894.1501, -861.2034)
+position = Vector2(466.156, 369.64557)
 
 [node name="stair5" parent="Collisions" unique_id=76670542 instance=ExtResource("3_orqdp")]
-position = Vector2(-2081.256, -717.0431)
+position = Vector2(356.86255, 367.61316)
 
 [node name="stair6" parent="Collisions" unique_id=174406526 instance=ExtResource("3_orqdp")]
 position = Vector2(1661.214, 275.342)
@@ -2048,9 +2048,10 @@ position = Vector2(75.43848, 0.5)
 shape = SubResource("RectangleShape2D_u5wl4")
 
 [node name="detail_col3" parent="Collisions" unique_id=976439449 instance=ExtResource("1_8l66c")]
-position = Vector2(4686.123, 158.9555)
+position = Vector2(4642.639, 253.97559)
 
 [node name="AnimatedSprite2D" parent="Collisions/detail_col3" index="0" unique_id=1488470973]
+visible = false
 position = Vector2(3.0517578e-05, 0)
 scale = Vector2(9.750004, 1)
 sprite_frames = SubResource("SpriteFrames_hg60c")
@@ -2059,9 +2060,10 @@ sprite_frames = SubResource("SpriteFrames_hg60c")
 shape = SubResource("RectangleShape2D_thn7l")
 
 [node name="detail_col5" parent="Collisions" unique_id=492826861 instance=ExtResource("1_8l66c")]
-position = Vector2(5385.73, 10.4539795)
+position = Vector2(5300.8438, 225.02722)
 
 [node name="AnimatedSprite2D" parent="Collisions/detail_col5" index="0" unique_id=1488470973]
+visible = false
 position = Vector2(10.9999275, 0)
 scale = Vector2(63.874977, 1)
 sprite_frames = SubResource("SpriteFrames_skwvs")
@@ -2224,7 +2226,7 @@ sprite_frames = SubResource("SpriteFrames_uhttr")
 shape = SubResource("RectangleShape2D_8qitv")
 
 [node name="balcony3" parent="Collisions" unique_id=258189485 instance=ExtResource("3_orqdp")]
-position = Vector2(2921.4392, -449.8196)
+position = Vector2(2922.2874, -449.39554)
 scale = Vector2(0.51017463, 1)
 
 [node name="AnimatedSprite2D" parent="Collisions/balcony3" index="0" unique_id=953697200]
