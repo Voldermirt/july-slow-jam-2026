@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dx4wudfdre6t8" path="res://scenes/objects/basic_platform.tscn" id="4_20uc6"]
 [ext_resource type="Resource" uid="uid://br1gypir7g2e6" path="res://items/test_item_2.tres" id="4_27nn5"]
 [ext_resource type="PackedScene" uid="uid://c0gxboubvgc6k" path="res://scenes/markers/door_marker.tscn" id="4_tn8v7"]
+[ext_resource type="PackedScene" uid="uid://cgrwe3m1eipgd" path="res://scenes/objects/shop_door.tscn" id="9_v6ipv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tn8v7"]
 size = Vector2(32, 320)
@@ -34,7 +35,6 @@ item_pool = Array[ExtResource("2_l0oas")]([ExtResource("3_v6ipv"), ExtResource("
 
 [node name="wall 2" parent="Collisions" unique_id=174057622 instance=ExtResource("3_s88nk")]
 position = Vector2(-376, -25)
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" parent="Collisions/wall 2" index="0" unique_id=1488470973]
 scale = Vector2(2, 20)
@@ -44,7 +44,6 @@ shape = SubResource("RectangleShape2D_tn8v7")
 
 [node name="wall 1" parent="Collisions" unique_id=1832983024 instance=ExtResource("3_s88nk")]
 position = Vector2(299, -25)
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" parent="Collisions/wall 1" index="0" unique_id=1488470973]
 scale = Vector2(2, 20)
@@ -54,7 +53,6 @@ shape = SubResource("RectangleShape2D_tn8v7")
 
 [node name="floor" parent="Collisions" unique_id=863357045 instance=ExtResource("3_s88nk")]
 position = Vector2(-37, 129)
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" parent="Collisions/floor" index="0" unique_id=1488470973]
 scale = Vector2(41, 10)
@@ -65,7 +63,6 @@ shape = SubResource("RectangleShape2D_471uh")
 
 [node name="ceiling" parent="Collisions" unique_id=2053507054 instance=ExtResource("3_s88nk")]
 position = Vector2(-37, -265)
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" parent="Collisions/ceiling" index="0" unique_id=1488470973]
 scale = Vector2(41, 10)
@@ -75,7 +72,6 @@ shape = SubResource("RectangleShape2D_s88nk")
 
 [node name="Top Floor" parent="Collisions" unique_id=2096503186 instance=ExtResource("4_20uc6")]
 position = Vector2(-60, -25)
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" parent="Collisions/Top Floor" index="0" unique_id=953697200]
 scale = Vector2(30, 0.25)
@@ -85,7 +81,6 @@ shape = SubResource("RectangleShape2D_20uc6")
 
 [node name="stair platform" parent="Collisions" unique_id=62280139 instance=ExtResource("4_20uc6")]
 position = Vector2(-328, 13)
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" parent="Collisions/stair platform" index="0" unique_id=953697200]
 scale = Vector2(4, 0.25)
@@ -126,6 +121,10 @@ position = Vector2(-195, -39)
 
 [node name="ShopItem6" parent="ItemStands" unique_id=818412783 instance=ExtResource("2_s88nk")]
 position = Vector2(73, -39)
+
+[node name="ShopDoor" parent="." unique_id=584781631 groups=["player_spawn"] instance=ExtResource("9_v6ipv")]
+position = Vector2(232, 11)
+door_mode = 1
 
 [editable path="Collisions/wall 2"]
 [editable path="Collisions/wall 1"]

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bc1emk1hlgkdt" path="res://scenes/pause_menu.tscn" id="2_udu3i"]
 [ext_resource type="PackedScene" uid="uid://dspb7hf3kj7bl" path="res://scenes/day_over_menu.tscn" id="3_ternb"]
 [ext_resource type="PackedScene" uid="uid://c51jmjacjutb6" path="res://scenes/TitleMenu.tscn" id="3_udu3i"]
+[ext_resource type="PackedScene" uid="uid://bn6nskligjksi" path="res://scenes/Player.tscn" id="4_q8mjp"]
 [ext_resource type="PackedScene" uid="uid://b3nxpf2j4f5yk" path="res://scenes/order_manager.tscn" id="5_eaq8r"]
 
 [node name="GameManager" type="Node" unique_id=1565701518 groups=["game_manager"]]
@@ -12,6 +13,7 @@ process_mode = 3
 script = ExtResource("1_udu3i")
 main_scene = ExtResource("1_glms7")
 day_over_screen = ExtResource("3_ternb")
+player_scene = ExtResource("4_q8mjp")
 
 [node name="TitleMenu" parent="." unique_id=212198270 instance=ExtResource("3_udu3i")]
 process_mode = 1
