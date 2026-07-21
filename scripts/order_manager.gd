@@ -71,6 +71,8 @@ func fulfill_order(order_dest : Vector2):
 
 func order_destination_interacted(order_dest : Vector2, player : Player):
 	var order := get_order_from_dest(order_dest)
+	if not order:
+		return
 	var player_top_item := player.get_top_item()
 	if not player_top_item:
 		return
@@ -78,7 +80,7 @@ func order_destination_interacted(order_dest : Vector2, player : Player):
 	if order.item.name == player_top_item.name:
 		player.remove_top_item()
 		fulfill_order(order_dest)
-		order_fulfilled.emit(order.item.value)
+		order_fulfilled.emit(player_top_item.value)
 
 func update_order_hud():
 	var markers = marker_parent.get_children() as Array[OrderHudMarker]
