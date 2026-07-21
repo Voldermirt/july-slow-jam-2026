@@ -3,19 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://b5gtaxaxae8p6" path="res://art/items/A-block.png" id="1_m4hiu"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_atvrc"]
-a = Vector2(-27, 0)
-b = Vector2(27, 0)
+a = Vector2(-24, 0)
+b = Vector2(24, 0)
 
 [node name="Rung1" type="StaticBody2D" unique_id=261807054]
 collision_layer = 8
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=180165411]
-position = Vector2(0, -32)
+position = Vector2(0, -9)
 scale = Vector2(2.2500005, 2.25)
 texture = ExtResource("1_m4hiu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1904866217]
-position = Vector2(0, -60)
+position = Vector2(0, -37)
 shape = SubResource("SegmentShape2D_atvrc")
 one_way_collision = true
