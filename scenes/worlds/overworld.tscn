@@ -86,7 +86,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjh80"]
-size = Vector2(436, 1255)
+size = Vector2(1041.1609, 1199.3324)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhfyp"]
 size = Vector2(341.63486, 193.32452)
@@ -310,7 +310,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5wl4"]
-size = Vector2(882, 47)
+size = Vector2(556.59985, 47)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hg60c"]
 animations = [{
@@ -382,19 +382,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23212"]
 size = Vector2(418, 4)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8bqrl"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_e6hv3")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imosk"]
-size = Vector2(184, 4)
+size = Vector2(484.89014, 4)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r54i6"]
 animations = [{
@@ -407,8 +396,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bqrl"]
-size = Vector2(184, 4)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46y3t"]
+size = Vector2(38.93921, 4.34021)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rtg1y"]
 animations = [{
@@ -422,7 +411,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3tdmy"]
-size = Vector2(120, 4)
+size = Vector2(144.98438, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqdx0"]
+size = Vector2(181.79297, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bqrl"]
+size = Vector2(92.85608, 7.0730286)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uhttr"]
 animations = [{
@@ -450,7 +445,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtg1y"]
-size = Vector2(168, 4)
+size = Vector2(94.81592, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6k0up"]
+size = Vector2(91.92151, 7.0730286)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6bgm"]
+size = Vector2(71.630615, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmwr1"]
+size = Vector2(94.729126, 7.0730286)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kw50q"]
+size = Vector2(492.3252, 4)
 
 [node name="overworld" type="Node2D" unique_id=1466800615]
 
@@ -582,6 +589,7 @@ position = Vector2(5131, -374)
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" parent="markers/apartment marker5" index="0" unique_id=1682072941]
+visible = false
 position = Vector2(120.99997, -48.500015)
 scale = Vector2(11.500001, 14.937498)
 sprite_frames = SubResource("SpriteFrames_qcxai")
@@ -718,12 +726,13 @@ shape = SubResource("RectangleShape2D_wbcg6")
 position = Vector2(6031, -401)
 
 [node name="AnimatedSprite2D" parent="Collisions/edge2" index="0" unique_id=1488470973]
+visible = false
 position = Vector2(-55.99997, -534.50006)
 scale = Vector2(27.249996, 78.4375)
 sprite_frames = SubResource("SpriteFrames_wbcg6")
 
 [node name="CollisionShape2D" parent="Collisions/edge2/StaticBody2D" parent_id_path=PackedInt32Array(358781077, 1239645926) index="0" unique_id=793594492]
-position = Vector2(-56, -534.5)
+position = Vector2(344.1997, -141.27142)
 shape = SubResource("RectangleShape2D_sjh80")
 
 [node name="Floor6" parent="Collisions" unique_id=1734349909 instance=ExtResource("1_8l66c")]
@@ -2054,19 +2063,20 @@ shape = SubResource("RectangleShape2D_yoccc")
 one_way_collision = true
 
 [node name="bridge" parent="Collisions" unique_id=1004917532 instance=ExtResource("1_8l66c")]
-position = Vector2(4769, -753)
+position = Vector2(4915.3, -672.69995)
 
 [node name="AnimatedSprite2D" parent="Collisions/bridge" index="0" unique_id=1488470973]
+visible = false
 position = Vector2(12.000028, 0.49999237)
 scale = Vector2(55.125004, 2.937499)
 sprite_frames = SubResource("SpriteFrames_dhfyp")
 
 [node name="CollisionShape2D" parent="Collisions/bridge/StaticBody2D" parent_id_path=PackedInt32Array(1004917532, 1239645926) index="0" unique_id=793594492]
-position = Vector2(12, 0.5)
+position = Vector2(75.43848, 0.5)
 shape = SubResource("RectangleShape2D_u5wl4")
 
 [node name="detail_col3" parent="Collisions" unique_id=976439449 instance=ExtResource("1_8l66c")]
-position = Vector2(4772, -304)
+position = Vector2(4686.123, 158.9555)
 
 [node name="AnimatedSprite2D" parent="Collisions/detail_col3" index="0" unique_id=1488470973]
 position = Vector2(3.0517578e-05, 0)
@@ -2090,7 +2100,7 @@ position = Vector2(11, 0)
 shape = SubResource("RectangleShape2D_qcxai")
 
 [node name="detail_col5" parent="Collisions" unique_id=492826861 instance=ExtResource("1_8l66c")]
-position = Vector2(5612, -301)
+position = Vector2(5385.73, 10.4539795)
 
 [node name="AnimatedSprite2D" parent="Collisions/detail_col5" index="0" unique_id=1488470973]
 position = Vector2(10.9999275, 0)
@@ -2128,20 +2138,8 @@ sprite_frames = SubResource("SpriteFrames_pmhgd")
 position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_23212")
 
-[node name="apart-roof3" parent="Collisions" unique_id=662389411 instance=ExtResource("3_orqdp")]
-position = Vector2(4136, -1225)
-
-[node name="AnimatedSprite2D" parent="Collisions/apart-roof3" index="0" unique_id=953697200]
-position = Vector2(-5.999833, 0)
-scale = Vector2(26.124998, 0.24999999)
-sprite_frames = SubResource("SpriteFrames_pmhgd")
-
-[node name="CollisionShape2D" parent="Collisions/apart-roof3/StaticBody2D" parent_id_path=PackedInt32Array(662389411, 1092522839) index="0" unique_id=75527162]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_23212")
-
 [node name="apart-roof8" parent="Collisions" unique_id=321635148 instance=ExtResource("3_orqdp")]
-position = Vector2(5440, -1159)
+position = Vector2(5483, -875)
 
 [node name="AnimatedSprite2D" parent="Collisions/apart-roof8" index="0" unique_id=953697200]
 position = Vector2(-5.999833, 0)
@@ -2149,47 +2147,11 @@ scale = Vector2(26.124998, 0.24999999)
 sprite_frames = SubResource("SpriteFrames_pmhgd")
 
 [node name="CollisionShape2D" parent="Collisions/apart-roof8/StaticBody2D" parent_id_path=PackedInt32Array(321635148, 1092522839) index="0" unique_id=75527162]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_23212")
-
-[node name="apart-roof9" parent="Collisions" unique_id=1053741677 instance=ExtResource("3_orqdp")]
-position = Vector2(5440, -902)
-
-[node name="AnimatedSprite2D" parent="Collisions/apart-roof9" index="0" unique_id=953697200]
-position = Vector2(-5.999833, 0)
-scale = Vector2(26.124998, 0.24999999)
-sprite_frames = SubResource("SpriteFrames_pmhgd")
-
-[node name="CollisionShape2D" parent="Collisions/apart-roof9/StaticBody2D" parent_id_path=PackedInt32Array(1053741677, 1092522839) index="0" unique_id=75527162]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_23212")
-
-[node name="apart-roof10" parent="Collisions" unique_id=872043663 instance=ExtResource("3_orqdp")]
-position = Vector2(5440, -670)
-
-[node name="AnimatedSprite2D" parent="Collisions/apart-roof10" index="0" unique_id=953697200]
-position = Vector2(-5.999833, 0)
-scale = Vector2(26.124998, 0.24999999)
-sprite_frames = SubResource("SpriteFrames_pmhgd")
-
-[node name="CollisionShape2D" parent="Collisions/apart-roof10/StaticBody2D" parent_id_path=PackedInt32Array(872043663, 1092522839) index="0" unique_id=75527162]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_23212")
-
-[node name="apart-roof11" parent="Collisions" unique_id=907746097 instance=ExtResource("3_orqdp")]
-position = Vector2(5258, -543)
-
-[node name="AnimatedSprite2D" parent="Collisions/apart-roof11" index="0" unique_id=953697200]
-position = Vector2(-5.9998093, 0)
-scale = Vector2(11.499998, 0.24999999)
-sprite_frames = SubResource("SpriteFrames_8bqrl")
-
-[node name="CollisionShape2D" parent="Collisions/apart-roof11/StaticBody2D" parent_id_path=PackedInt32Array(907746097, 1092522839) index="0" unique_id=75527162]
-position = Vector2(-6, 0)
+position = Vector2(27.445313, 0)
 shape = SubResource("RectangleShape2D_imosk")
 
 [node name="stoplight1" parent="Collisions" unique_id=1743170388 instance=ExtResource("3_orqdp")]
-position = Vector2(5034, -576)
+position = Vector2(4779.4546, -511.45456)
 
 [node name="AnimatedSprite2D" parent="Collisions/stoplight1" index="0" unique_id=953697200]
 position = Vector2(-5.9998093, 0)
@@ -2197,11 +2159,23 @@ scale = Vector2(11.499998, 0.24999999)
 sprite_frames = SubResource("SpriteFrames_r54i6")
 
 [node name="CollisionShape2D" parent="Collisions/stoplight1/StaticBody2D" parent_id_path=PackedInt32Array(1743170388, 1092522839) index="0" unique_id=75527162]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_8bqrl")
+position = Vector2(-12.191895, 0.17010498)
+shape = SubResource("RectangleShape2D_46y3t")
+
+[node name="stoplight4" parent="Collisions" unique_id=422839681 instance=ExtResource("3_orqdp")]
+position = Vector2(5226.727, -512.36365)
+
+[node name="AnimatedSprite2D" parent="Collisions/stoplight4" index="0" unique_id=953697200]
+position = Vector2(-5.9998093, 0)
+scale = Vector2(11.499998, 0.24999999)
+sprite_frames = SubResource("SpriteFrames_r54i6")
+
+[node name="CollisionShape2D" parent="Collisions/stoplight4/StaticBody2D" parent_id_path=PackedInt32Array(422839681, 1092522839) index="0" unique_id=75527162]
+position = Vector2(-12.191895, 0.17010498)
+shape = SubResource("RectangleShape2D_46y3t")
 
 [node name="pillar-form" parent="Collisions" unique_id=823324142 instance=ExtResource("3_orqdp")]
-position = Vector2(4778, -464)
+position = Vector2(4987.091, -334.9091)
 
 [node name="AnimatedSprite2D" parent="Collisions/pillar-form" index="0" unique_id=953697200]
 position = Vector2(-6.000003, 0)
@@ -2209,20 +2183,20 @@ scale = Vector2(7.499997, 0.24999999)
 sprite_frames = SubResource("SpriteFrames_rtg1y")
 
 [node name="CollisionShape2D" parent="Collisions/pillar-form/StaticBody2D" parent_id_path=PackedInt32Array(823324142, 1092522839) index="0" unique_id=75527162]
-position = Vector2(-6, 0)
+position = Vector2(6.4921875, 0)
 shape = SubResource("RectangleShape2D_3tdmy")
 
-[node name="stoplight2" parent="Collisions" unique_id=1581350516 instance=ExtResource("3_orqdp")]
-position = Vector2(4506, -576)
+[node name="pillar-form2" parent="Collisions" unique_id=23893157 instance=ExtResource("3_orqdp")]
+position = Vector2(4965.886, -231.42929)
 
-[node name="AnimatedSprite2D" parent="Collisions/stoplight2" index="0" unique_id=953697200]
-position = Vector2(-5.9998093, 0)
-scale = Vector2(11.499998, 0.24999999)
-sprite_frames = SubResource("SpriteFrames_r54i6")
+[node name="AnimatedSprite2D" parent="Collisions/pillar-form2" index="0" unique_id=953697200]
+position = Vector2(-6.000003, 0)
+scale = Vector2(7.499997, 0.24999999)
+sprite_frames = SubResource("SpriteFrames_rtg1y")
 
-[node name="CollisionShape2D" parent="Collisions/stoplight2/StaticBody2D" parent_id_path=PackedInt32Array(1581350516, 1092522839) index="0" unique_id=75527162]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_8bqrl")
+[node name="CollisionShape2D" parent="Collisions/pillar-form2/StaticBody2D" parent_id_path=PackedInt32Array(23893157, 1092522839) index="0" unique_id=75527162]
+position = Vector2(52.216797, -17.758362)
+shape = SubResource("RectangleShape2D_oqdx0")
 
 [node name="stoplight3" parent="Collisions" unique_id=1026949298 instance=ExtResource("3_orqdp")]
 position = Vector2(3323.0576, -509.479)
@@ -2421,7 +2395,7 @@ position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_8bqrl")
 
 [node name="balcony-roof10" parent="Collisions" unique_id=618498740 instance=ExtResource("3_orqdp")]
-position = Vector2(4238, -822)
+position = Vector2(4405.152, -887.28925)
 
 [node name="AnimatedSprite2D" parent="Collisions/balcony-roof10" index="0" unique_id=953697200]
 position = Vector2(-6.0000544, 0)
@@ -2429,11 +2403,11 @@ scale = Vector2(10.500017, 0.24999999)
 sprite_frames = SubResource("SpriteFrames_imosk")
 
 [node name="CollisionShape2D" parent="Collisions/balcony-roof10/StaticBody2D" parent_id_path=PackedInt32Array(618498740, 1092522839) index="0" unique_id=75527162]
-position = Vector2(-6, 0)
+position = Vector2(-42.592285, 0)
 shape = SubResource("RectangleShape2D_rtg1y")
 
 [node name="balcony10" parent="Collisions" unique_id=529028455 instance=ExtResource("3_orqdp")]
-position = Vector2(4238, -712)
+position = Vector2(4478.9644, -557.0116)
 
 [node name="AnimatedSprite2D" parent="Collisions/balcony10" index="0" unique_id=953697200]
 position = Vector2(-5.9998093, 0)
@@ -2445,7 +2419,7 @@ position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_8bqrl")
 
 [node name="balcony13" parent="Collisions" unique_id=232915870 instance=ExtResource("3_orqdp")]
-position = Vector2(4034, -1000)
+position = Vector2(4488.4717, -777.78577)
 
 [node name="AnimatedSprite2D" parent="Collisions/balcony13" index="0" unique_id=953697200]
 position = Vector2(-5.9998093, 0)
@@ -2453,11 +2427,11 @@ scale = Vector2(11.499998, 0.24999999)
 sprite_frames = SubResource("SpriteFrames_r54i6")
 
 [node name="CollisionShape2D" parent="Collisions/balcony13/StaticBody2D" parent_id_path=PackedInt32Array(232915870, 1092522839) index="0" unique_id=75527162]
-position = Vector2(-6, 0)
+position = Vector2(-16.39502, 2.0496216)
 shape = SubResource("RectangleShape2D_8bqrl")
 
 [node name="balcony-roof13" parent="Collisions" unique_id=558859906 instance=ExtResource("3_orqdp")]
-position = Vector2(4034, -1110)
+position = Vector2(4371.34, -668.97815)
 
 [node name="AnimatedSprite2D" parent="Collisions/balcony-roof13" index="0" unique_id=953697200]
 position = Vector2(-6.0000544, 0)
@@ -2469,7 +2443,7 @@ position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_rtg1y")
 
 [node name="balcony-roof14" parent="Collisions" unique_id=1837223092 instance=ExtResource("3_orqdp")]
-position = Vector2(4238, -1110)
+position = Vector2(4584.68, -888.38727)
 
 [node name="AnimatedSprite2D" parent="Collisions/balcony-roof14" index="0" unique_id=953697200]
 position = Vector2(-6.0000544, 0)
@@ -2481,7 +2455,7 @@ position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_rtg1y")
 
 [node name="balcony14" parent="Collisions" unique_id=2006287832 instance=ExtResource("3_orqdp")]
-position = Vector2(4238, -1000)
+position = Vector2(4574.1836, -448.54916)
 
 [node name="AnimatedSprite2D" parent="Collisions/balcony14" index="0" unique_id=953697200]
 position = Vector2(-5.9998093, 0)
@@ -2489,11 +2463,11 @@ scale = Vector2(11.499998, 0.24999999)
 sprite_frames = SubResource("SpriteFrames_r54i6")
 
 [node name="CollisionShape2D" parent="Collisions/balcony14/StaticBody2D" parent_id_path=PackedInt32Array(2006287832, 1092522839) index="0" unique_id=75527162]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_8bqrl")
+position = Vector2(3.5136719, 0)
+shape = SubResource("RectangleShape2D_6k0up")
 
 [node name="balcony15" parent="Collisions" unique_id=1998749001 instance=ExtResource("3_orqdp")]
-position = Vector2(5336, -928)
+position = Vector2(5401.57, -665.72284)
 
 [node name="AnimatedSprite2D" parent="Collisions/balcony15" index="0" unique_id=953697200]
 position = Vector2(-5.9998093, 0)
@@ -2501,11 +2475,11 @@ scale = Vector2(11.499998, 0.24999999)
 sprite_frames = SubResource("SpriteFrames_r54i6")
 
 [node name="CollisionShape2D" parent="Collisions/balcony15/StaticBody2D" parent_id_path=PackedInt32Array(1998749001, 1092522839) index="0" unique_id=75527162]
-position = Vector2(-6, 0)
+position = Vector2(3.980957, 0)
 shape = SubResource("RectangleShape2D_8bqrl")
 
 [node name="balcony-roof15" parent="Collisions" unique_id=431843236 instance=ExtResource("3_orqdp")]
-position = Vector2(5336, -1038)
+position = Vector2(5342.612, -600.81)
 
 [node name="AnimatedSprite2D" parent="Collisions/balcony-roof15" index="0" unique_id=953697200]
 position = Vector2(-6.0000544, 0)
@@ -2529,7 +2503,7 @@ position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_rtg1y")
 
 [node name="balcony16" parent="Collisions" unique_id=526444985 instance=ExtResource("3_orqdp")]
-position = Vector2(5540, -928)
+position = Vector2(5624.6714, -447.63272)
 
 [node name="AnimatedSprite2D" parent="Collisions/balcony16" index="0" unique_id=953697200]
 position = Vector2(-5.9998093, 0)
@@ -2541,7 +2515,7 @@ position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_8bqrl")
 
 [node name="balcony17" parent="Collisions" unique_id=1823573705 instance=ExtResource("3_orqdp")]
-position = Vector2(5336, -700)
+position = Vector2(5623.882, -666.6448)
 
 [node name="AnimatedSprite2D" parent="Collisions/balcony17" index="0" unique_id=953697200]
 position = Vector2(-5.9998093, 0)
@@ -2565,7 +2539,7 @@ position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_rtg1y")
 
 [node name="balcony-roof18" parent="Collisions" unique_id=1267898175 instance=ExtResource("3_orqdp")]
-position = Vector2(5540, -810)
+position = Vector2(5531.2764, -559.0657)
 
 [node name="AnimatedSprite2D" parent="Collisions/balcony-roof18" index="0" unique_id=953697200]
 position = Vector2(-6.0000544, 0)
@@ -2573,11 +2547,11 @@ scale = Vector2(10.500017, 0.24999999)
 sprite_frames = SubResource("SpriteFrames_imosk")
 
 [node name="CollisionShape2D" parent="Collisions/balcony-roof18/StaticBody2D" parent_id_path=PackedInt32Array(1267898175, 1092522839) index="0" unique_id=75527162]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_rtg1y")
+position = Vector2(-17.592773, 0)
+shape = SubResource("RectangleShape2D_w6bgm")
 
 [node name="balcony18" parent="Collisions" unique_id=369926439 instance=ExtResource("3_orqdp")]
-position = Vector2(5540, -700)
+position = Vector2(5412.737, -448.0394)
 
 [node name="AnimatedSprite2D" parent="Collisions/balcony18" index="0" unique_id=953697200]
 position = Vector2(-5.9998093, 0)
@@ -2589,7 +2563,7 @@ position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_8bqrl")
 
 [node name="balcony-roof12" parent="Collisions" unique_id=2033598056 instance=ExtResource("3_orqdp")]
-position = Vector2(4238, -594)
+position = Vector2(4582.2827, -669.10767)
 
 [node name="AnimatedSprite2D" parent="Collisions/balcony-roof12" index="0" unique_id=953697200]
 position = Vector2(-6.0000544, 0)
@@ -2601,7 +2575,7 @@ position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_rtg1y")
 
 [node name="balcony12" parent="Collisions" unique_id=1971021818 instance=ExtResource("3_orqdp")]
-position = Vector2(4238, -484)
+position = Vector2(4359.7583, -447.61243)
 
 [node name="AnimatedSprite2D" parent="Collisions/balcony12" index="0" unique_id=953697200]
 position = Vector2(-5.9998093, 0)
@@ -2609,11 +2583,11 @@ scale = Vector2(11.499998, 0.24999999)
 sprite_frames = SubResource("SpriteFrames_r54i6")
 
 [node name="CollisionShape2D" parent="Collisions/balcony12/StaticBody2D" parent_id_path=PackedInt32Array(1971021818, 1092522839) index="0" unique_id=75527162]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_8bqrl")
+position = Vector2(4.9174805, 0)
+shape = SubResource("RectangleShape2D_tmwr1")
 
 [node name="apart-roof4" parent="Collisions" unique_id=2089061205 instance=ExtResource("3_orqdp")]
-position = Vector2(4136, -943)
+position = Vector2(4438.7275, -1094.8181)
 
 [node name="AnimatedSprite2D" parent="Collisions/apart-roof4" index="0" unique_id=953697200]
 position = Vector2(-5.999833, 0)
@@ -2621,8 +2595,8 @@ scale = Vector2(26.124998, 0.24999999)
 sprite_frames = SubResource("SpriteFrames_pmhgd")
 
 [node name="CollisionShape2D" parent="Collisions/apart-roof4/StaticBody2D" parent_id_path=PackedInt32Array(2089061205, 1092522839) index="0" unique_id=75527162]
-position = Vector2(-6, 0)
-shape = SubResource("RectangleShape2D_23212")
+position = Vector2(31.162598, 0)
+shape = SubResource("RectangleShape2D_kw50q")
 
 [node name="apart-roof7" parent="Collisions" unique_id=702198415 instance=ExtResource("3_orqdp")]
 position = Vector2(3031.503, -874.64624)
@@ -3021,14 +2995,11 @@ position = Vector2(5619, -726)
 [editable path="Collisions/detail_col5"]
 [editable path="Collisions/detail_col6"]
 [editable path="Collisions/apart-roof2"]
-[editable path="Collisions/apart-roof3"]
 [editable path="Collisions/apart-roof8"]
-[editable path="Collisions/apart-roof9"]
-[editable path="Collisions/apart-roof10"]
-[editable path="Collisions/apart-roof11"]
 [editable path="Collisions/stoplight1"]
+[editable path="Collisions/stoplight4"]
 [editable path="Collisions/pillar-form"]
-[editable path="Collisions/stoplight2"]
+[editable path="Collisions/pillar-form2"]
 [editable path="Collisions/stoplight3"]
 [editable path="Collisions/fire-escape1"]
 [editable path="Collisions/fire-escape2"]
