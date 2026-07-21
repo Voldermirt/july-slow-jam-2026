@@ -59,11 +59,12 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_15q6v")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=339169772]
+visible = false
 scale = Vector2(6, 0.25)
 texture = ExtResource("1_mckg6")
 
 [node name="Player" parent="." unique_id=2124019400 instance=ExtResource("2_n4mhe")]
-position = Vector2(224.99997, 292)
+position = Vector2(-87, 368)
 
 [node name="ShopWorldArea" parent="." unique_id=1914970356 instance=ExtResource("5_8jkjp")]
 position = Vector2(-300, 290)
