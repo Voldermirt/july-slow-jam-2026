@@ -80,9 +80,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjb4j"]
 size = Vector2(32, 32)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_casys"]
-radius = 16.0
-height = 32.0
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_mdl7e"]
+points = PackedVector2Array(-16, -16, 16, -16, 16, 13, 12, 16, -12, 16, -16, 13)
 
 [node name="Player" type="CharacterBody2D" unique_id=2124019400 node_paths=PackedStringArray("animation_component") groups=["player"]]
 scale = Vector2(2.3387332, 2.3387332)

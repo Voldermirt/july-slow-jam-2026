@@ -75,6 +75,11 @@ func _process(_delta: float) -> void:
 	
 	#rotation = get_angle_to(target_order.destination.global_position)
 	rotation = (target_order.destination - global_position).angle()
+	item_icon.global_rotation = 0
+	#if rotation > PI / 2 and rotation < 3 * PI / 2:
+		#item_icon.flip_v = true
+	#else:
+		#item_icon.flip_v = false
 	
 	## Calculate position
 	#var cam_rect = get_camera_rect()

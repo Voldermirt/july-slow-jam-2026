@@ -33,5 +33,4 @@ script = ExtResource("1_bfjj6")
 texture = SubResource("GradientTexture2D_h3mav")
 
 [node name="ItemIcon" type="Sprite2D" parent="Offset" unique_id=1575029482]
-scale = Vector2(2, 2)
 texture = SubResource("GradientTexture2D_hrvr2")
