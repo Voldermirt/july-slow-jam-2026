@@ -4,6 +4,7 @@ class_name Game
 @export var max_game_time_seconds := 120.0
 @export var main_scene : PackedScene
 @export var day_over_screen : PackedScene
+@export var player_scene : PackedScene
 
 var game_time_left : float
 var game_running := false
@@ -18,6 +19,7 @@ var current_day := 1
 @onready var pause_menu: Control = $PauseCanvasLayer/PauseMenu
 @onready var order_timer: Timer = $OrderTimer
 @onready var order_manager: OrderManager = $OrderManager
+@onready var hud: Control = $HUD
 
 func _ready() -> void:
 	game_time_left = max_game_time_seconds
@@ -29,9 +31,11 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if game_running:
 		game_time_left -= delta
-		print(game_time_left)
+		#print(game_time_left)
 		if game_time_left <= 0.0:
 			end_game()
+	
+	hud.update_hud(max_game_time_seconds, game_time_left, score)
 
 func set_pause(value : bool):
 	get_tree().paused = value
@@ -40,35 +44,70 @@ func set_pause(value : bool):
 func _on_pause_menu_continue_pressed() -> void:
 	set_pause(false)
 
-func change_scene_to_packed(to : PackedScene, unload_current := false):
+func change_scene_to_packed(to : PackedScene, unload_current := false, maintain_player := false):
+	var player : Player = get_tree().get_first_node_in_group("player")
+	if maintain_player:
+		if player:
+			player.get_parent().remove_child(player)
+		else:
+			player = player_scene.instantiate()
+	
 	if unload_current:
 		unloaded_scene = current_scene
 		remove_child(current_scene)
 	else:
 		current_scene.queue_free()
-		
+	
 	await get_tree().process_frame
 	var new_scene := to.instantiate()
 	new_scene.process_mode = Node.PROCESS_MODE_PAUSABLE
+	
+	if maintain_player:
+		new_scene.add_child(player)
+	
+	
 	add_child(new_scene)
 	current_scene = new_scene
+	
+	if maintain_player:
+		var player_spawn = get_tree().get_first_node_in_group("player_spawn") as Node2D
+		player.global_position = player_spawn.global_position
+	
 
-func restore_scene():
+func restore_scene(maintain_player := false):
 	if not unloaded_scene:
 		push_error("Can't restore nonexistent scene!")
 		return
 	
+	var player : Player = get_tree().get_first_node_in_group("player")
+	if maintain_player:
+		if player:
+			player.get_parent().remove_child(player)
+		else:
+			player = player_scene.instantiate()
+	
 	current_scene.queue_free()
 	await get_tree().process_frame
+	
+	if maintain_player:
+		unloaded_scene.add_child(player)
+	
 	add_child(unloaded_scene)
 	current_scene = unloaded_scene
+	
+	if maintain_player:
+		var player_spawn = get_tree().get_first_node_in_group("player_spawn") as Node2D
+		player.global_position = player_spawn.global_position
 
 func start_game():
-	change_scene_to_packed(main_scene)
+	await change_scene_to_packed(main_scene, false, true)
 	
 	await get_tree().process_frame
+	
+	order_manager.load_destination_positions()
 	order_manager.create_order()
 	order_timer.start()
+	
 	game_running = true
 	can_pause = true
 

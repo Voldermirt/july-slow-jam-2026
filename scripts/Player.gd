@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 @export_group("Movement Parameters")
-@export var speed : float = 325 # Pixels per second
+@export var speed : float = 250 # Pixels per second
 @export var accel : float = 80 # Pixels per second per second
 @export_subgroup("Jump Parameters")
 # Used to calculate the actual physical parameters for the jump
@@ -163,6 +163,10 @@ func get_top_item() -> Item:
 
 func remove_top_item():
 	item_stack.remove_top_item()
+
+# If stable is true, stuff can't fall off the stack
+func set_stack_stability(stable : bool):
+	item_stack.set_stability(stable)
 
 func apply_impulse(direction : Vector2, force : float) -> void:
 	# The acceleration will slow us way down in the x direction

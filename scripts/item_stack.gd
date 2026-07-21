@@ -21,6 +21,9 @@ var player_gravity := 0.0
 var player_vel := Vector2.ZERO
 var accel := 0.0
 
+# If true, stuff can't fall off the stack
+var stable := false
+
 func set_player_velocity(vel : Vector2):
 	#accel = ((player_vel - vel).length())
 	
@@ -61,7 +64,7 @@ func push_item(item_data : Item) -> void:
 	height += 1
 
 func pop_item(dir := Vector2.ZERO) -> void:
-	if height == 0:
+	if height == 0 or stable:
 		return
 	print("POP!")
 	var stack_item = get_top_item()
@@ -88,6 +91,8 @@ func pop_item(dir := Vector2.ZERO) -> void:
 	height -= 1
 	
 func pop_items(num_items : int, dir := Vector2.ZERO) -> void:
+	if stable:
+		return
 	for i in range(num_items):
 		pop_item(dir)
 
@@ -98,6 +103,8 @@ func get_top_item() -> Node2D:
 
 func remove_top_item():
 	if height == 0:
+		return
+	if stable:
 		return
 	
 	var stack_item = get_top_item()
@@ -140,6 +147,9 @@ func get_adjusted_accel(p_accel : float, p_height : int) -> float:
 func drop_voluntarily(dir : Vector2) -> void: # If false: right
 	dir = dir.rotated(randf_range(-0.25, 0.25)) # Range of nearly 15 degrees either way
 	pop_item(dir)
+
+func set_stability(stability : bool):
+	stable = stability
 
 ### DEBUG PURPOSES ###
 func _input(event: InputEvent) -> void:

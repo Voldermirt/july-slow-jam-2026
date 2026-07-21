@@ -11,13 +11,18 @@ signal order_fulfilled(value : int)
 var order_queue : Array[Order] = []
 var num_completed := 0
 
+var destination_positions : Array[Vector2] = []
+
 @onready var marker_parent: Node2D = $OrderHUD/MarkerParent
 
-func is_destination_free(dest : Node2D):
+func load_destination_positions():
+	for dest in get_tree().get_nodes_in_group("order_destination"):
+		destination_positions.append(dest.global_position)
+
+func is_destination_free(dest : Vector2):
 	for order : Order in order_queue:
 		if order.destination == dest:
 			return false
-	
 	return true
 
 func get_active_orders() -> Array[Order]:
@@ -25,7 +30,7 @@ func get_active_orders() -> Array[Order]:
 		return []
 	return order_queue.slice(0, len(order_queue))
 
-func get_order_from_dest(dest : Node2D) -> Order:
+func get_order_from_dest(dest : Vector2) -> Order:
 	for order : Order in order_queue:
 		if order.destination == dest:
 			return order
@@ -33,18 +38,16 @@ func get_order_from_dest(dest : Node2D) -> Order:
 	return null
 
 func create_order():
-	var destinations := get_tree().get_nodes_in_group("order_destination")
-	print(destinations)
-	if len(order_queue) == len(destinations):
+	if len(order_queue) == len(destination_positions):
 		print("Everyone has already ordered something!")
 		return
 	
 	var order_item := item_pool.pick_random() as Item
 	var available_destinations = []#destinations.filter(func (dest): is_destination_free(dest))
-	for d in destinations:
+	for d in destination_positions:
 		if is_destination_free(d):
 			available_destinations.append(d)
-	var order_dest : Node2D = available_destinations.pick_random()
+	var order_dest : Vector2 = available_destinations.pick_random()
 	var new_order := Order.new(order_item, order_dest) # This band has some good songs
 	
 	print(new_order.destination)
@@ -56,7 +59,7 @@ func create_order():
 	if should_update_hud:
 		update_order_hud()
 
-func fulfill_order(order_dest : Node2D):
+func fulfill_order(order_dest : Vector2):
 	num_completed += 1
 	
 	var completed_order = get_order_from_dest(order_dest)
@@ -66,7 +69,7 @@ func fulfill_order(order_dest : Node2D):
 	update_order_hud()
 	
 
-func order_destination_interacted(order_dest : Node2D, player : Player):
+func order_destination_interacted(order_dest : Vector2, player : Player):
 	var order := get_order_from_dest(order_dest)
 	var player_top_item := player.get_top_item()
 	if not player_top_item:
@@ -89,6 +92,7 @@ func update_order_hud():
 
 func reset():
 	order_queue = []
+	destination_positions = []
 	num_completed = 0
 	for m : OrderHudMarker in marker_parent.get_children():
 		m.visible = false
@@ -96,8 +100,8 @@ func reset():
 
 class Order: # Family genus species
 	var item : Item
-	var destination : Node2D
+	var destination : Vector2
 	
-	func _init(p_item : Item, p_dest : Node2D) -> void:
+	func _init(p_item : Item, p_dest : Vector2) -> void:
 		item = p_item
 		destination = p_dest

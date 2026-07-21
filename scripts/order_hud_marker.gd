@@ -26,7 +26,7 @@ func is_dest_on_screen() -> bool:
 	if not target_order.destination:
 		return false
 	
-	var p := target_order.destination.global_position
+	var p := target_order.destination
 	var cam_pos := get_viewport().get_camera_2d().global_position
 	var screen_limits := get_viewport().get_visible_rect().size / 2.0
 	
@@ -62,16 +62,19 @@ func calculate_intersection_offset(rect, vec) -> Vector2:
 func _process(_delta: float) -> void:
 	if not game_manager.game_running:
 		return
-	if not target_order:
+	if not target_order or not target_order.destination:
+		return
+	var cam = get_viewport().get_camera_2d()
+	if not cam:
 		return
 	visible = !is_dest_on_screen()
 	if not visible:
 		return
 	
-	global_position = get_viewport().get_camera_2d().global_position
+	global_position = cam.global_position
 	
 	#rotation = get_angle_to(target_order.destination.global_position)
-	rotation = (target_order.destination.global_position - global_position).angle()
+	rotation = (target_order.destination - global_position).angle()
 	
 	## Calculate position
 	#var cam_rect = get_camera_rect()

@@ -38,6 +38,7 @@ player=""
 game_manager=""
 order_destination=""
 order_manager=""
+player_spawn=""
 
 [input]
 

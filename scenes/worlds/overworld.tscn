@@ -4,12 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://dnpus3w7i3uri" path="res://art/backgrounds/outdoors.png" id="1_dhfyp"]
 [ext_resource type="Texture2D" uid="uid://d22ac7e24jd2p" path="res://art/sketches/overworld outskirts.png" id="1_jq58b"]
 [ext_resource type="PackedScene" uid="uid://dhh7o38hc12vb" path="res://scenes/markers/building_marker.tscn" id="2_8j1md"]
-[ext_resource type="PackedScene" uid="uid://bn6nskligjksi" path="res://scenes/Player.tscn" id="2_177g6"]
 [ext_resource type="Texture2D" uid="uid://bobxkgccror12" path="res://art/sketches/apartments sketch.png" id="2_abuwv"]
 [ext_resource type="PackedScene" uid="uid://dx4wudfdre6t8" path="res://scenes/objects/basic_platform.tscn" id="3_orqdp"]
 [ext_resource type="Texture2D" uid="uid://bfbnvvhen1cdn" path="res://art/test_txtr_0.png" id="4_e6hv3"]
 [ext_resource type="PackedScene" uid="uid://c0gxboubvgc6k" path="res://scenes/markers/door_marker.tscn" id="4_tf8mi"]
 [ext_resource type="Texture2D" uid="uid://binv5c85b57dd" path="res://art/test_txtr_1.png" id="5_2s45h"]
+[ext_resource type="PackedScene" uid="uid://cgrwe3m1eipgd" path="res://scenes/objects/shop_door.tscn" id="5_dhfyp"]
+[ext_resource type="PackedScene" uid="uid://digis8q116bte" path="res://scenes/Shop WorldArea.tscn" id="6_hg60c"]
 [ext_resource type="PackedScene" uid="uid://bgj1l2rrx3468" path="res://scenes/markers/order_marker.tscn" id="7_5qbd5"]
 [ext_resource type="PackedScene" uid="uid://b0eq54nranpel" path="res://scenes/markers/hazard_marker.tscn" id="7_883o0"]
 
@@ -631,6 +632,10 @@ metadata/_edit_group_ = true
 position = Vector2(120.99997, -48.500015)
 scale = Vector2(11.500001, 14.937498)
 sprite_frames = SubResource("SpriteFrames_qcxai")
+
+[node name="ShopDoor" parent="markers" unique_id=584781631 groups=["player_spawn"] instance=ExtResource("5_dhfyp")]
+position = Vector2(-57, 18)
+shop_scene = ExtResource("6_hg60c")
 
 [node name="door_marker" parent="markers" unique_id=296325069 instance=ExtResource("4_tf8mi")]
 position = Vector2(-95.83139, 150.3135)
@@ -2434,10 +2439,6 @@ sprite_frames = SubResource("SpriteFrames_pmhgd")
 [node name="CollisionShape2D" parent="Collisions/apart-roof14/StaticBody2D" parent_id_path=PackedInt32Array(1808587819, 1092522839) index="0" unique_id=75527162]
 position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_23212")
-
-[node name="Player" parent="." unique_id=2124019400 instance=ExtResource("2_177g6")]
-position = Vector2(-82.97766, 110.63689)
-speed = 250.0
 
 [editable path="markers/shop marker"]
 [editable path="markers/shop marker2"]
