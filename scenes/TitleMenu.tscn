@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cm1kxeos8xc4b" path="res://art/interface/title_screen_credits.png" id="2_8g0qr"]
 [ext_resource type="Texture2D" uid="uid://camw63si58wtf" path="res://art/interface/title_screen_start.png" id="3_cvlrc"]
 [ext_resource type="Texture2D" uid="uid://b2nvk150s7pbl" path="res://art/interface/title_screen_quit.png" id="4_ye7mv"]
-[ext_resource type="Texture2D" uid="uid://dqf7fq12i7dgi" path="res://art/instructions.png" id="6_ye7mv"]
+[ext_resource type="Texture2D" uid="uid://ci3i6gbl6oc5r" path="res://art/instructions1.png" id="6_ye7mv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ugloe"]
 texture = ExtResource("1_ly241")
