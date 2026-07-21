@@ -718,9 +718,6 @@ position = Vector2(4027, -1026)
 [node name="order marker23" parent="markers" unique_id=1790922437 instance=ExtResource("7_5qbd5")]
 position = Vector2(4232, -1026)
 
-[node name="order marker9" parent="markers" unique_id=224766200 instance=ExtResource("7_5qbd5")]
-position = Vector2(444.82938, 157.37173)
-
 [node name="hazard_marker" parent="markers" unique_id=1902817344 instance=ExtResource("7_883o0")]
 position = Vector2(2625, -795)
 
