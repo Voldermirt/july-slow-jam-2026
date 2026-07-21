@@ -159,7 +159,10 @@ func _input(event: InputEvent):
 		position.y += 2
 
 func get_top_item() -> Item:
-	return item_stack.get_top_item().item_data
+	var top_item = item_stack.get_top_item()
+	if not top_item:
+		return null
+	return top_item.item_data
 
 func remove_top_item():
 	item_stack.remove_top_item()

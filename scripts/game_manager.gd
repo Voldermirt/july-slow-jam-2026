@@ -19,7 +19,7 @@ var current_day := 1
 @onready var pause_menu: Control = $PauseCanvasLayer/PauseMenu
 @onready var order_timer: Timer = $OrderTimer
 @onready var order_manager: OrderManager = $OrderManager
-@onready var hud: Control = $HUD
+@onready var hud: Control = $HUDCanvasLayer/HUD
 
 func _ready() -> void:
 	game_time_left = max_game_time_seconds

@@ -54,8 +54,11 @@ visible = false
 process_mode = 1
 wait_time = 10.0
 
-[node name="HUD" type="Control" parent="." unique_id=105532442]
-visible = false
+[node name="HUDCanvasLayer" type="CanvasLayer" parent="." unique_id=674995282]
+layer = 2
+
+[node name="HUD" type="Control" parent="HUDCanvasLayer" unique_id=105532442]
+z_index = 100
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,7 +68,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("8_jdad8")
 
-[node name="Control" type="Control" parent="HUD" unique_id=1715608830]
+[node name="Control" type="Control" parent="HUDCanvasLayer/HUD" unique_id=1715608830]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -75,7 +78,7 @@ offset_right = 20.0
 offset_bottom = 40.0
 grow_horizontal = 2
 
-[node name="TimeLeft" type="ProgressBar" parent="HUD/Control" unique_id=1855340526]
+[node name="TimeLeft" type="ProgressBar" parent="HUDCanvasLayer/HUD/Control" unique_id=1855340526]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 1
 anchors_preset = 5
@@ -92,7 +95,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_jjb4j")
 value = 50.0
 show_percentage = false
 
-[node name="ScoreLabel" type="Label" parent="HUD" unique_id=1995254756]
+[node name="ScoreLabel" type="Label" parent="HUDCanvasLayer/HUD" unique_id=1995254756]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

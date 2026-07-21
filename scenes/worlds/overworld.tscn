@@ -11,43 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://binv5c85b57dd" path="res://art/test_txtr_1.png" id="5_2s45h"]
 [ext_resource type="PackedScene" uid="uid://cgrwe3m1eipgd" path="res://scenes/objects/shop_door.tscn" id="5_dhfyp"]
 [ext_resource type="PackedScene" uid="uid://digis8q116bte" path="res://scenes/Shop WorldArea.tscn" id="6_hg60c"]
-[ext_resource type="PackedScene" uid="uid://bgj1l2rrx3468" path="res://scenes/markers/order_marker.tscn" id="7_5qbd5"]
 [ext_resource type="PackedScene" uid="uid://b0eq54nranpel" path="res://scenes/markers/hazard_marker.tscn" id="7_883o0"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5qbd5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_2s45h")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="PackedScene" uid="uid://brlrsu5pjcnja" path="res://scenes/objects/order_destination.tscn" id="14_arabk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_84sw8"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_2s45h")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_u5wl4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_2s45h")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_thn7l"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -506,16 +473,6 @@ visible = false
 position = Vector2(0, 45.5)
 scale = Vector2(20, 14.312501)
 
-[node name="shop marker2" parent="markers" unique_id=2139910652 instance=ExtResource("2_8j1md")]
-position = Vector2(-403, -101)
-metadata/_edit_group_ = true
-
-[node name="AnimatedSprite2D" parent="markers/shop marker2" index="0" unique_id=1682072941]
-visible = false
-position = Vector2(2.4999928, 45.5)
-scale = Vector2(22.1875, 14.312501)
-sprite_frames = SubResource("SpriteFrames_5qbd5")
-
 [node name="building marker2" parent="markers" unique_id=1635136492 instance=ExtResource("2_8j1md")]
 position = Vector2(513.43555, -10)
 metadata/_edit_group_ = true
@@ -589,6 +546,7 @@ position = Vector2(0, 0.9999962)
 scale = Vector2(20, 8.75)
 
 [node name="apartment marker1" parent="markers" unique_id=63968972 instance=ExtResource("2_8j1md")]
+visible = false
 position = Vector2(2870, -380)
 metadata/_edit_group_ = true
 
@@ -598,6 +556,7 @@ scale = Vector2(26.125, 37.125)
 sprite_frames = SubResource("SpriteFrames_84sw8")
 
 [node name="apartment marker2" parent="markers" unique_id=1507501002 instance=ExtResource("2_8j1md")]
+visible = false
 position = Vector2(3620, -380)
 metadata/_edit_group_ = true
 
@@ -605,24 +564,6 @@ metadata/_edit_group_ = true
 position = Vector2(6.1035156e-05, -226.00002)
 scale = Vector2(26.125, 37.125)
 sprite_frames = SubResource("SpriteFrames_84sw8")
-
-[node name="apartment marker3" parent="markers" unique_id=1678821418 instance=ExtResource("2_8j1md")]
-position = Vector2(4130, -380)
-metadata/_edit_group_ = true
-
-[node name="AnimatedSprite2D" parent="markers/apartment marker3" index="0" unique_id=1682072941]
-position = Vector2(6.1035156e-05, -387)
-scale = Vector2(26.125, 57.249996)
-sprite_frames = SubResource("SpriteFrames_u5wl4")
-
-[node name="apartment marker4" parent="markers" unique_id=986111271 instance=ExtResource("2_8j1md")]
-position = Vector2(5434, -380)
-metadata/_edit_group_ = true
-
-[node name="AnimatedSprite2D" parent="markers/apartment marker4" index="0" unique_id=1682072941]
-position = Vector2(0.5000843, -355)
-scale = Vector2(26.562487, 53.249996)
-sprite_frames = SubResource("SpriteFrames_thn7l")
 
 [node name="apartment marker5" parent="markers" unique_id=368339859 instance=ExtResource("2_8j1md")]
 position = Vector2(5131, -374)
@@ -634,7 +575,7 @@ scale = Vector2(11.500001, 14.937498)
 sprite_frames = SubResource("SpriteFrames_qcxai")
 
 [node name="ShopDoor" parent="markers" unique_id=584781631 groups=["player_spawn"] instance=ExtResource("5_dhfyp")]
-position = Vector2(-57, 18)
+position = Vector2(-82, 128)
 shop_scene = ExtResource("6_hg60c")
 
 [node name="door_marker" parent="markers" unique_id=296325069 instance=ExtResource("4_tf8mi")]
@@ -644,84 +585,6 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" parent="markers/door_marker" index="0" unique_id=212661092]
 position = Vector2(13.000002, -35)
 scale = Vector2(2.6250002, 5.375)
-
-[node name="order marker" parent="markers" unique_id=477312778 groups=["order_destination"] instance=ExtResource("7_5qbd5")]
-position = Vector2(-1280, 34)
-
-[node name="order marker2" parent="markers" unique_id=1556603552 groups=["order_destination"] instance=ExtResource("7_5qbd5")]
-position = Vector2(-1830, 157)
-
-[node name="order marker3" parent="markers" unique_id=1506560244 groups=["order_destination"] instance=ExtResource("7_5qbd5")]
-position = Vector2(-838.0099, 158.21939)
-
-[node name="order marker4" parent="markers" unique_id=78164700 groups=["order_destination"] instance=ExtResource("7_5qbd5")]
-position = Vector2(939.6133, 157.66844)
-
-[node name="order marker5" parent="markers" unique_id=2126705115 groups=["order_destination"] instance=ExtResource("7_5qbd5")]
-position = Vector2(1016, 38)
-
-[node name="order marker6" parent="markers" unique_id=1937169360 groups=["order_destination"] instance=ExtResource("7_5qbd5")]
-position = Vector2(1529.9211, -45.9868)
-
-[node name="order marker7" parent="markers" unique_id=870603760 groups=["order_destination"] instance=ExtResource("7_5qbd5")]
-position = Vector2(1884.9426, -47.433)
-
-[node name="order marker8" parent="markers" unique_id=1095498004 groups=["order_destination"] instance=ExtResource("7_5qbd5")]
-position = Vector2(2421.4063, -228.88411)
-
-[node name="order marker10" parent="markers" unique_id=1242866845 instance=ExtResource("7_5qbd5")]
-position = Vector2(2767, -504)
-
-[node name="order marker11" parent="markers" unique_id=2093158934 instance=ExtResource("7_5qbd5")]
-position = Vector2(2972, -504)
-
-[node name="order marker12" parent="markers" unique_id=895839671 instance=ExtResource("7_5qbd5")]
-position = Vector2(2767, -736)
-
-[node name="order marker13" parent="markers" unique_id=1601958749 instance=ExtResource("7_5qbd5")]
-position = Vector2(2972, -736)
-
-[node name="order marker14" parent="markers" unique_id=983910515 instance=ExtResource("7_5qbd5")]
-position = Vector2(3518, -504)
-
-[node name="order marker15" parent="markers" unique_id=479960803 instance=ExtResource("7_5qbd5")]
-position = Vector2(3723, -504)
-
-[node name="order marker16" parent="markers" unique_id=265875251 instance=ExtResource("7_5qbd5")]
-position = Vector2(3518, -736)
-
-[node name="order marker17" parent="markers" unique_id=1738127855 instance=ExtResource("7_5qbd5")]
-position = Vector2(3723, -736)
-
-[node name="order marker18" parent="markers" unique_id=1942326230 instance=ExtResource("7_5qbd5")]
-position = Vector2(4027, -504)
-
-[node name="order marker19" parent="markers" unique_id=205416874 instance=ExtResource("7_5qbd5")]
-position = Vector2(4232, -504)
-
-[node name="order marker20" parent="markers" unique_id=2010240604 instance=ExtResource("7_5qbd5")]
-position = Vector2(4027, -736)
-
-[node name="order marker21" parent="markers" unique_id=256892758 instance=ExtResource("7_5qbd5")]
-position = Vector2(4232, -736)
-
-[node name="order marker24" parent="markers" unique_id=2119894460 instance=ExtResource("7_5qbd5")]
-position = Vector2(5331, -729)
-
-[node name="order marker25" parent="markers" unique_id=232687837 instance=ExtResource("7_5qbd5")]
-position = Vector2(5536, -729)
-
-[node name="order marker26" parent="markers" unique_id=325711638 instance=ExtResource("7_5qbd5")]
-position = Vector2(5331, -961)
-
-[node name="order marker27" parent="markers" unique_id=6599095 instance=ExtResource("7_5qbd5")]
-position = Vector2(5536, -961)
-
-[node name="order marker22" parent="markers" unique_id=1735780389 instance=ExtResource("7_5qbd5")]
-position = Vector2(4027, -1026)
-
-[node name="order marker23" parent="markers" unique_id=1790922437 instance=ExtResource("7_5qbd5")]
-position = Vector2(4232, -1026)
 
 [node name="hazard_marker" parent="markers" unique_id=1902817344 instance=ExtResource("7_883o0")]
 position = Vector2(2625, -795)
@@ -2440,8 +2303,54 @@ sprite_frames = SubResource("SpriteFrames_pmhgd")
 position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_23212")
 
+[node name="OrderDestinations" type="Node2D" parent="." unique_id=835953472]
+
+[node name="OrderDestination" parent="OrderDestinations" unique_id=1973646687 groups=["order_destination"] instance=ExtResource("14_arabk")]
+position = Vector2(-1282, 12)
+
+[node name="OrderDestination2" parent="OrderDestinations" unique_id=498279900 groups=["order_destination"] instance=ExtResource("14_arabk")]
+position = Vector2(-1830, 133)
+
+[node name="OrderDestination3" parent="OrderDestinations" unique_id=430856055 groups=["order_destination"] instance=ExtResource("14_arabk")]
+position = Vector2(-838, 140)
+
+[node name="OrderDestination4" parent="OrderDestinations" unique_id=1532131268 groups=["order_destination"] instance=ExtResource("14_arabk")]
+position = Vector2(938.8945, 137.37593)
+
+[node name="OrderDestination5" parent="OrderDestinations" unique_id=797966666 groups=["order_destination"] instance=ExtResource("14_arabk")]
+position = Vector2(1529, -70)
+
+[node name="OrderDestination6" parent="OrderDestinations" unique_id=1795179601 groups=["order_destination"] instance=ExtResource("14_arabk")]
+position = Vector2(443, 134)
+
+[node name="OrderDestination7" parent="OrderDestinations" unique_id=556505587 groups=["order_destination"] instance=ExtResource("14_arabk")]
+position = Vector2(2919, -512)
+
+[node name="OrderDestination8" parent="OrderDestinations" unique_id=1048439366 groups=["order_destination"] instance=ExtResource("14_arabk")]
+position = Vector2(2424, -250)
+
+[node name="OrderDestination9" parent="OrderDestinations" unique_id=2028679940 groups=["order_destination"] instance=ExtResource("14_arabk")]
+position = Vector2(2919, -730)
+
+[node name="OrderDestination10" parent="OrderDestinations" unique_id=517967320 groups=["order_destination"] instance=ExtResource("14_arabk")]
+position = Vector2(3776, -506)
+
+[node name="OrderDestination11" parent="OrderDestinations" unique_id=954476128 groups=["order_destination"] instance=ExtResource("14_arabk")]
+position = Vector2(3776, -728)
+
+[node name="OrderDestination12" parent="OrderDestinations" unique_id=1418929933 groups=["order_destination"] instance=ExtResource("14_arabk")]
+position = Vector2(3989, -511)
+
+[node name="OrderDestination13" parent="OrderDestinations" unique_id=171049334 groups=["order_destination"] instance=ExtResource("14_arabk")]
+position = Vector2(3989.9023, -727.3117)
+
+[node name="OrderDestination14" parent="OrderDestinations" unique_id=409777184 groups=["order_destination"] instance=ExtResource("14_arabk")]
+position = Vector2(5405, -720)
+
+[node name="OrderDestination15" parent="OrderDestinations" unique_id=1569399220 groups=["order_destination"] instance=ExtResource("14_arabk")]
+position = Vector2(5619, -726)
+
 [editable path="markers/shop marker"]
-[editable path="markers/shop marker2"]
 [editable path="markers/building marker2"]
 [editable path="markers/building marker7"]
 [editable path="markers/building marker8"]
@@ -2452,8 +2361,6 @@ shape = SubResource("RectangleShape2D_23212")
 [editable path="markers/building marker6"]
 [editable path="markers/apartment marker1"]
 [editable path="markers/apartment marker2"]
-[editable path="markers/apartment marker3"]
-[editable path="markers/apartment marker4"]
 [editable path="markers/apartment marker5"]
 [editable path="markers/door_marker"]
 [editable path="Collisions/detail_col1"]
