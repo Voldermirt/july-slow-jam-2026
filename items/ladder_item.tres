@@ -2,20 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bnmwo6dq5mx8d" path="res://scripts/item_resource.gd" id="1_3ioet"]
 [ext_resource type="PackedScene" uid="uid://bxgnnbugrl8na" path="res://scenes/items/ladder_item.tscn" id="1_f4oyy"]
-
-[sub_resource type="Gradient" id="Gradient_f4oyy"]
-colors = PackedColorArray(0.5788799, 0.11520002, 0.72, 1, 0.1577901, 0.93, 0.055800002, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_atvrc"]
-gradient = SubResource("Gradient_f4oyy")
-width = 16
-height = 16
-fill_from = Vector2(0.12820514, 0.61538464)
+[ext_resource type="Texture2D" uid="uid://b5gtaxaxae8p6" path="res://art/items/A-block.png" id="3_k8nk0"]
 
 [resource]
 script = ExtResource("1_3ioet")
 name = "ladder"
-sprite = SubResource("GradientTexture2D_atvrc")
+sprite = ExtResource("3_k8nk0")
 min_value = 3
 max_value = 6
 instantiated_item = ExtResource("1_f4oyy")

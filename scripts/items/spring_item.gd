@@ -35,5 +35,5 @@ func apply_player_impulse(player : Player):
 func _on_body_entered(body: Node2D) -> void:
 	if not body is Player:
 		return
-	
-	apply_player_impulse(body as Player)
+	if is_placed:
+		apply_player_impulse(body as Player)
