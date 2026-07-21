@@ -23,7 +23,6 @@ func is_destination_free(dest : Vector2):
 	for order : Order in order_queue:
 		if order.destination == dest:
 			return false
-	
 	return true
 
 func get_active_orders() -> Array[Order]:

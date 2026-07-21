@@ -550,7 +550,7 @@ scale = Vector2(11.500001, 14.937498)
 sprite_frames = SubResource("SpriteFrames_qcxai")
 
 [node name="ShopDoor" parent="markers" unique_id=584781631 groups=["player_spawn"] instance=ExtResource("5_dhfyp")]
-position = Vector2(-57, 17)
+position = Vector2(-57, 18)
 shop_scene = ExtResource("6_hg60c")
 
 [node name="door_marker" parent="markers" unique_id=296325069 instance=ExtResource("4_tf8mi")]

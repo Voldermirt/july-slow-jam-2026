@@ -19,6 +19,7 @@ var current_day := 1
 @onready var pause_menu: Control = $PauseCanvasLayer/PauseMenu
 @onready var order_timer: Timer = $OrderTimer
 @onready var order_manager: OrderManager = $OrderManager
+@onready var hud: Control = $HUD
 
 func _ready() -> void:
 	game_time_left = max_game_time_seconds
@@ -33,6 +34,8 @@ func _process(delta: float) -> void:
 		#print(game_time_left)
 		if game_time_left <= 0.0:
 			end_game()
+	
+	hud.update_hud(max_game_time_seconds, game_time_left, score)
 
 func set_pause(value : bool):
 	get_tree().paused = value
