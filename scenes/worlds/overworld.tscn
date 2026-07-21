@@ -1788,9 +1788,10 @@ position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_gbb1v")
 
 [node name="fire-escape1" parent="Collisions" unique_id=1823985745 instance=ExtResource("3_orqdp")]
-position = Vector2(2630, -762)
+position = Vector2(2745, -688)
 
 [node name="AnimatedSprite2D" parent="Collisions/fire-escape1" index="0" unique_id=953697200]
+visible = false
 position = Vector2(-0.00015258789, 0)
 scale = Vector2(3.8750124, 0.24999999)
 sprite_frames = SubResource("SpriteFrames_uhttr")
@@ -1799,9 +1800,10 @@ sprite_frames = SubResource("SpriteFrames_uhttr")
 shape = SubResource("RectangleShape2D_8qitv")
 
 [node name="fire-escape2" parent="Collisions" unique_id=1422971113 instance=ExtResource("3_orqdp")]
-position = Vector2(2630, -678)
+position = Vector2(2747, -603)
 
 [node name="AnimatedSprite2D" parent="Collisions/fire-escape2" index="0" unique_id=953697200]
+visible = false
 position = Vector2(-0.00015258789, 0)
 scale = Vector2(3.8750124, 0.24999999)
 sprite_frames = SubResource("SpriteFrames_uhttr")
@@ -1810,9 +1812,10 @@ sprite_frames = SubResource("SpriteFrames_uhttr")
 shape = SubResource("RectangleShape2D_8qitv")
 
 [node name="fire-escape3" parent="Collisions" unique_id=1487553410 instance=ExtResource("3_orqdp")]
-position = Vector2(2630, -600)
+position = Vector2(2747, -511)
 
 [node name="AnimatedSprite2D" parent="Collisions/fire-escape3" index="0" unique_id=953697200]
+visible = false
 position = Vector2(-0.00015258789, 0)
 scale = Vector2(3.8750124, 0.24999999)
 sprite_frames = SubResource("SpriteFrames_uhttr")
@@ -1821,9 +1824,10 @@ sprite_frames = SubResource("SpriteFrames_uhttr")
 shape = SubResource("RectangleShape2D_8qitv")
 
 [node name="fire-escape4" parent="Collisions" unique_id=2097365803 instance=ExtResource("3_orqdp")]
-position = Vector2(2630, -528)
+position = Vector2(2747.1636, -431.4716)
 
 [node name="AnimatedSprite2D" parent="Collisions/fire-escape4" index="0" unique_id=953697200]
+visible = false
 position = Vector2(-0.00015258789, 0)
 scale = Vector2(3.8750124, 0.24999999)
 sprite_frames = SubResource("SpriteFrames_uhttr")
@@ -1832,9 +1836,10 @@ sprite_frames = SubResource("SpriteFrames_uhttr")
 shape = SubResource("RectangleShape2D_8qitv")
 
 [node name="fire-escape5" parent="Collisions" unique_id=1421491262 instance=ExtResource("3_orqdp")]
-position = Vector2(2630, -456)
+position = Vector2(2746, -331)
 
 [node name="AnimatedSprite2D" parent="Collisions/fire-escape5" index="0" unique_id=953697200]
+visible = false
 position = Vector2(-0.00015258789, 0)
 scale = Vector2(3.8750124, 0.24999999)
 sprite_frames = SubResource("SpriteFrames_uhttr")
@@ -1843,9 +1848,10 @@ sprite_frames = SubResource("SpriteFrames_uhttr")
 shape = SubResource("RectangleShape2D_8qitv")
 
 [node name="fire-escape6" parent="Collisions" unique_id=1315200030 instance=ExtResource("3_orqdp")]
-position = Vector2(2630, -376)
+position = Vector2(2746, -728)
 
 [node name="AnimatedSprite2D" parent="Collisions/fire-escape6" index="0" unique_id=953697200]
+visible = false
 position = Vector2(-0.00015258789, 0)
 scale = Vector2(3.8750124, 0.24999999)
 sprite_frames = SubResource("SpriteFrames_uhttr")
@@ -1955,9 +1961,11 @@ position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_8bqrl")
 
 [node name="balcony3" parent="Collisions" unique_id=258189485 instance=ExtResource("3_orqdp")]
-position = Vector2(2774, -484)
+position = Vector2(2921.4392, -449.8196)
+scale = Vector2(0.51017463, 1)
 
 [node name="AnimatedSprite2D" parent="Collisions/balcony3" index="0" unique_id=953697200]
+visible = false
 position = Vector2(-5.9998093, 0)
 scale = Vector2(11.499998, 0.24999999)
 sprite_frames = SubResource("SpriteFrames_r54i6")
@@ -1991,9 +1999,11 @@ position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_rtg1y")
 
 [node name="balcony4" parent="Collisions" unique_id=1850518158 instance=ExtResource("3_orqdp")]
-position = Vector2(2978, -484)
+position = Vector2(3134.6172, -450.12152)
+scale = Vector2(0.50351614, 0.82892483)
 
 [node name="AnimatedSprite2D" parent="Collisions/balcony4" index="0" unique_id=953697200]
+visible = false
 position = Vector2(-5.9998093, 0)
 scale = Vector2(11.499998, 0.24999999)
 sprite_frames = SubResource("SpriteFrames_r54i6")
@@ -2411,7 +2421,8 @@ position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_23212")
 
 [node name="apart-roof14" parent="Collisions" unique_id=1808587819 instance=ExtResource("3_orqdp")]
-position = Vector2(2877, -446)
+position = Vector2(2921.6094, -279.00003)
+scale = Vector2(0.28703648, 0.7902959)
 
 [node name="AnimatedSprite2D" parent="Collisions/apart-roof14" index="0" unique_id=953697200]
 position = Vector2(-5.999833, 0)
