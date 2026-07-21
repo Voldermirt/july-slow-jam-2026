@@ -81,7 +81,7 @@ animations = [{
 size = Vector2(32, 32)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_casys"]
-radius = 16.0
+radius = 10.440533
 height = 32.0
 
 [node name="Player" type="CharacterBody2D" unique_id=2124019400 node_paths=PackedStringArray("animation_component") groups=["player"]]
