@@ -2110,6 +2110,17 @@ sprite_frames = SubResource("SpriteFrames_uhttr")
 [node name="CollisionShape2D" parent="Collisions/fire-escape4/StaticBody2D" parent_id_path=PackedInt32Array(2097365803, 1092522839) index="0" unique_id=75527162]
 shape = SubResource("RectangleShape2D_8qitv")
 
+[node name="fire-escape13" parent="Collisions" unique_id=1607372719 instance=ExtResource("3_orqdp")]
+position = Vector2(4194.5313, -545.1001)
+
+[node name="AnimatedSprite2D" parent="Collisions/fire-escape13" index="0" unique_id=953697200]
+position = Vector2(-0.00015258789, 0)
+scale = Vector2(3.8750124, 0.24999999)
+sprite_frames = SubResource("SpriteFrames_uhttr")
+
+[node name="CollisionShape2D" parent="Collisions/fire-escape13/StaticBody2D" parent_id_path=PackedInt32Array(1607372719, 1092522839) index="0" unique_id=75527162]
+shape = SubResource("RectangleShape2D_8qitv")
+
 [node name="fire-escape5" parent="Collisions" unique_id=1421491262 instance=ExtResource("3_orqdp")]
 position = Vector2(2746, -331)
 
@@ -2478,6 +2489,72 @@ sprite_frames = SubResource("SpriteFrames_uhttr")
 [node name="CollisionShape2D" parent="Collisions/fire-escape9/StaticBody2D" parent_id_path=PackedInt32Array(1573650978, 1092522839) index="0" unique_id=75527162]
 shape = SubResource("RectangleShape2D_8qitv")
 
+[node name="fire-escape14" parent="Collisions" unique_id=1606689130 instance=ExtResource("3_orqdp")]
+position = Vector2(4190.774, -367.05908)
+
+[node name="AnimatedSprite2D" parent="Collisions/fire-escape14" index="0" unique_id=953697200]
+position = Vector2(-0.00015258789, 0)
+scale = Vector2(3.8750124, 0.24999999)
+sprite_frames = SubResource("SpriteFrames_uhttr")
+
+[node name="CollisionShape2D" parent="Collisions/fire-escape14/StaticBody2D" parent_id_path=PackedInt32Array(1606689130, 1092522839) index="0" unique_id=75527162]
+shape = SubResource("RectangleShape2D_8qitv")
+
+[node name="fire-escape15" parent="Collisions" unique_id=191716807 instance=ExtResource("3_orqdp")]
+position = Vector2(4193.8784, -431.6349)
+
+[node name="AnimatedSprite2D" parent="Collisions/fire-escape15" index="0" unique_id=953697200]
+position = Vector2(-0.00015258789, 0)
+scale = Vector2(3.8750124, 0.24999999)
+sprite_frames = SubResource("SpriteFrames_uhttr")
+
+[node name="CollisionShape2D" parent="Collisions/fire-escape15/StaticBody2D" parent_id_path=PackedInt32Array(191716807, 1092522839) index="0" unique_id=75527162]
+shape = SubResource("RectangleShape2D_8qitv")
+
+[node name="fire-escape16" parent="Collisions" unique_id=483077034 instance=ExtResource("3_orqdp")]
+position = Vector2(4193.596, -612.0408)
+
+[node name="AnimatedSprite2D" parent="Collisions/fire-escape16" index="0" unique_id=953697200]
+position = Vector2(-0.00015258789, 0)
+scale = Vector2(3.8750124, 0.24999999)
+sprite_frames = SubResource("SpriteFrames_uhttr")
+
+[node name="CollisionShape2D" parent="Collisions/fire-escape16/StaticBody2D" parent_id_path=PackedInt32Array(483077034, 1092522839) index="0" unique_id=75527162]
+shape = SubResource("RectangleShape2D_8qitv")
+
+[node name="fire-escape17" parent="Collisions" unique_id=1899016446 instance=ExtResource("3_orqdp")]
+position = Vector2(4192.4673, -726.0645)
+
+[node name="AnimatedSprite2D" parent="Collisions/fire-escape17" index="0" unique_id=953697200]
+position = Vector2(-0.00015258789, 0)
+scale = Vector2(3.8750124, 0.24999999)
+sprite_frames = SubResource("SpriteFrames_uhttr")
+
+[node name="CollisionShape2D" parent="Collisions/fire-escape17/StaticBody2D" parent_id_path=PackedInt32Array(1899016446, 1092522839) index="0" unique_id=75527162]
+shape = SubResource("RectangleShape2D_8qitv")
+
+[node name="fire-escape18" parent="Collisions" unique_id=779921902 instance=ExtResource("3_orqdp")]
+position = Vector2(4191.903, -972.73956)
+
+[node name="AnimatedSprite2D" parent="Collisions/fire-escape18" index="0" unique_id=953697200]
+position = Vector2(-0.00015258789, 0)
+scale = Vector2(3.8750124, 0.24999999)
+sprite_frames = SubResource("SpriteFrames_uhttr")
+
+[node name="CollisionShape2D" parent="Collisions/fire-escape18/StaticBody2D" parent_id_path=PackedInt32Array(779921902, 1092522839) index="0" unique_id=75527162]
+shape = SubResource("RectangleShape2D_8qitv")
+
+[node name="fire-escape19" parent="Collisions" unique_id=612469240 instance=ExtResource("3_orqdp")]
+position = Vector2(4191.3384, -828.79877)
+
+[node name="AnimatedSprite2D" parent="Collisions/fire-escape19" index="0" unique_id=953697200]
+position = Vector2(-0.00015258789, 0)
+scale = Vector2(3.8750124, 0.24999999)
+sprite_frames = SubResource("SpriteFrames_uhttr")
+
+[node name="CollisionShape2D" parent="Collisions/fire-escape19/StaticBody2D" parent_id_path=PackedInt32Array(612469240, 1092522839) index="0" unique_id=75527162]
+shape = SubResource("RectangleShape2D_8qitv")
+
 [node name="fire-escape10" parent="Collisions" unique_id=692144911 instance=ExtResource("3_orqdp")]
 position = Vector2(3605.9165, -431.47153)
 
@@ -2842,7 +2919,7 @@ position = Vector2(3989, -511)
 position = Vector2(3989.9023, -727.3117)
 
 [node name="OrderDestination14" parent="OrderDestinations" unique_id=409777184 groups=["order_destination"] instance=ExtResource("14_arabk")]
-position = Vector2(5405, -720)
+position = Vector2(5405.621, -719.3791)
 
 [node name="OrderDestination15" parent="OrderDestinations" unique_id=1569399220 groups=["order_destination"] instance=ExtResource("14_arabk")]
 position = Vector2(5619, -726)
@@ -2961,6 +3038,7 @@ position = Vector2(5619, -726)
 [editable path="Collisions/fire-escape2"]
 [editable path="Collisions/fire-escape3"]
 [editable path="Collisions/fire-escape4"]
+[editable path="Collisions/fire-escape13"]
 [editable path="Collisions/fire-escape5"]
 [editable path="Collisions/fire-escape6"]
 [editable path="Collisions/balcony3"]
@@ -2991,6 +3069,12 @@ position = Vector2(5619, -726)
 [editable path="Collisions/fire-escape7"]
 [editable path="Collisions/fire-escape8"]
 [editable path="Collisions/fire-escape9"]
+[editable path="Collisions/fire-escape14"]
+[editable path="Collisions/fire-escape15"]
+[editable path="Collisions/fire-escape16"]
+[editable path="Collisions/fire-escape17"]
+[editable path="Collisions/fire-escape18"]
+[editable path="Collisions/fire-escape19"]
 [editable path="Collisions/fire-escape10"]
 [editable path="Collisions/fire-escape11"]
 [editable path="Collisions/fire-escape12"]

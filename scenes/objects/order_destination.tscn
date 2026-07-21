@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c1owershenb8o" path="res://scenes/interactable_component.tscn" id="1_iljj3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cfn7a"]
-size = Vector2(64, 64)
+size = Vector2(65.305786, 73.710754)
 
 [node name="OrderDestination" type="Node2D" unique_id=1973646687]
 script = ExtResource("1_cfn7a")
@@ -12,6 +12,7 @@ script = ExtResource("1_cfn7a")
 [node name="InteractableComponent" parent="." unique_id=60683989 instance=ExtResource("1_iljj3")]
 
 [node name="CollisionShape2D" parent="InteractableComponent" index="0" unique_id=1634449250]
+position = Vector2(0.65289307, 4.8553734)
 shape = SubResource("RectangleShape2D_cfn7a")
 
 [connection signal="on_interact" from="InteractableComponent" to="." method="_on_interactable_component_on_interact"]
