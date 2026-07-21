@@ -4,8 +4,10 @@
 [ext_resource type="Script" uid="uid://l7tbk6iteb8v" path="res://scripts/music_autoload.gd" id="1_73f8g"]
 [ext_resource type="AudioStream" uid="uid://boomln43xw2ox" path="res://music/overworld_music.mp3" id="2_73f8g"]
 
-[node name="MusicPlayer" type="Node" unique_id=430290801]
+[node name="MusicPlayer" type="Node" unique_id=430290801 node_paths=PackedStringArray("shop_music", "overworld_music")]
 script = ExtResource("1_73f8g")
+shop_music = NodePath("ShopMusic")
+overworld_music = NodePath("OverworldMusic")
 
 [node name="ShopMusic" type="AudioStreamPlayer" parent="." unique_id=605838587]
 stream = ExtResource("1_4a8yt")
