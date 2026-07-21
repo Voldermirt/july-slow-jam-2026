@@ -13,6 +13,9 @@ class_name Player
 @export var max_coyote_time : float = 0.05
 @export var max_jump_buffer : float = 0.05
 
+@export_subgroup("Components")
+@export var animation_component: AnimationComponent
+
 #@export_group("Item Stack Options")
 #@export var base_knock_off_threshold : float = 650.0
 
@@ -49,11 +52,12 @@ func _ready() -> void:
 	
 	item_stack.set_player_max_speed(speed)
 	item_stack.set_player_gravity(gravity)
-	
+
 
 
 func _physics_process(delta: float) -> void:	
 	horizontal_movement(delta)
+
 	jump(delta)
 	
 	handle_impulse()
@@ -72,8 +76,17 @@ func horizontal_movement(delta: float):
 	
 	if vel < 0:
 		facing_direction = Vector2.LEFT
+		animation_component.handle_move_animation(-1)
+		animation_component.handle_jump_animation(is_jumping, -1)
+		
 	elif vel > 0:
 		facing_direction = Vector2.RIGHT
+		animation_component.handle_move_animation(1)
+		animation_component.handle_jump_animation(is_jumping, 1)
+		
+	else:
+		animation_component.handle_move_animation(0)
+		animation_component.handle_jump_animation(is_jumping, 0)
 		
 	velocity.x = move_toward(velocity.x, vel, accel * delta)
 	

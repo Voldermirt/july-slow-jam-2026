@@ -12,16 +12,16 @@
 [ext_resource type="PackedScene" uid="uid://cgrwe3m1eipgd" path="res://scenes/objects/shop_door.tscn" id="9_v6ipv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tn8v7"]
-size = Vector2(16, 406.5)
+size = Vector2(16, 463.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_471uh"]
-size = Vector2(689, 21)
+size = Vector2(706, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s88nk"]
-size = Vector2(690, 70)
+size = Vector2(705, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20uc6"]
-size = Vector2(518, 14)
+size = Vector2(468, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yff2y"]
 size = Vector2(69, 15)
@@ -31,7 +31,7 @@ script = ExtResource("1_pv42f")
 item_pool = Array[ExtResource("2_l0oas")]([ExtResource("3_27nn5"), ExtResource("4_o3w1m")])
 
 [node name="Shop" type="Sprite2D" parent="." unique_id=864052989]
-position = Vector2(-26, -103)
+position = Vector2(-21, -119)
 texture = ExtResource("5_27nn5")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=110963680]
@@ -46,11 +46,11 @@ visible = false
 scale = Vector2(2, 20)
 
 [node name="CollisionShape2D" parent="Collisions/wall 2/StaticBody2D" parent_id_path=PackedInt32Array(174057622, 1239645926) index="0" unique_id=793594492]
-position = Vector2(-8, -42.75)
+position = Vector2(-8, -71.25)
 shape = SubResource("RectangleShape2D_tn8v7")
 
 [node name="wall 1" parent="Collisions" unique_id=1832983024 instance=ExtResource("3_s88nk")]
-position = Vector2(299, -25)
+position = Vector2(292, -113)
 
 [node name="AnimatedSprite2D" parent="Collisions/wall 1" index="0" unique_id=1488470973]
 visible = false
@@ -68,7 +68,7 @@ visible = false
 scale = Vector2(41, 10)
 
 [node name="CollisionShape2D" parent="Collisions/floor/StaticBody2D" parent_id_path=PackedInt32Array(863357045, 1239645926) index="0" unique_id=793594492]
-position = Vector2(16.5, -52.5)
+position = Vector2(8, -52.5)
 shape = SubResource("RectangleShape2D_471uh")
 
 [node name="ceiling" parent="Collisions" unique_id=2053507054 instance=ExtResource("3_s88nk")]
@@ -79,40 +79,57 @@ visible = false
 scale = Vector2(41, 10)
 
 [node name="CollisionShape2D" parent="Collisions/ceiling/StaticBody2D" parent_id_path=PackedInt32Array(2053507054, 1239645926) index="0" unique_id=793594492]
-position = Vector2(-19, -45)
+position = Vector2(-11.5, -70)
 shape = SubResource("RectangleShape2D_s88nk")
 
 [node name="Top Floor" parent="Collisions" unique_id=2096503186 instance=ExtResource("4_20uc6")]
-position = Vector2(-60, -25)
+position = Vector2(-53, -41)
 
 [node name="AnimatedSprite2D" parent="Collisions/Top Floor" index="0" unique_id=953697200]
-visible = false
 scale = Vector2(30, 0.25)
 
 [node name="CollisionShape2D" parent="Collisions/Top Floor/StaticBody2D" parent_id_path=PackedInt32Array(2096503186, 1092522839) index="0" unique_id=75527162]
-position = Vector2(19, -5)
+position = Vector2(58, -7.5)
 shape = SubResource("RectangleShape2D_20uc6")
 
 [node name="stair platform" parent="Collisions" unique_id=62280139 instance=ExtResource("4_20uc6")]
-position = Vector2(-328, 13)
+position = Vector2(-344, 4)
 
 [node name="AnimatedSprite2D" parent="Collisions/stair platform" index="0" unique_id=953697200]
-visible = false
 scale = Vector2(4, 0.25)
 
 [node name="CollisionShape2D" parent="Collisions/stair platform/StaticBody2D" parent_id_path=PackedInt32Array(62280139, 1092522839) index="0" unique_id=75527162]
 position = Vector2(2.5, -6)
 shape = SubResource("RectangleShape2D_yff2y")
 
-[node name="stair platform2" parent="Collisions" unique_id=1329506845 instance=ExtResource("4_20uc6")]
-position = Vector2(-284, 30)
+[node name="stair platform5" parent="Collisions" unique_id=1990259447 instance=ExtResource("4_20uc6")]
+position = Vector2(-355, 68)
 
-[node name="AnimatedSprite2D" parent="Collisions/stair platform2" index="0" unique_id=953697200]
-visible = false
+[node name="AnimatedSprite2D" parent="Collisions/stair platform5" index="0" unique_id=953697200]
 scale = Vector2(4, 0.25)
 
-[node name="CollisionShape2D" parent="Collisions/stair platform2/StaticBody2D" parent_id_path=PackedInt32Array(1329506845, 1092522839) index="0" unique_id=75527162]
-position = Vector2(2.5, -5.5)
+[node name="CollisionShape2D" parent="Collisions/stair platform5/StaticBody2D" parent_id_path=PackedInt32Array(1990259447, 1092522839) index="0" unique_id=75527162]
+position = Vector2(2.5, -6)
+shape = SubResource("RectangleShape2D_yff2y")
+
+[node name="stair platform7" parent="Collisions" unique_id=664420237 instance=ExtResource("4_20uc6")]
+position = Vector2(-268, -19)
+
+[node name="AnimatedSprite2D" parent="Collisions/stair platform7" index="0" unique_id=953697200]
+scale = Vector2(4, 0.25)
+
+[node name="CollisionShape2D" parent="Collisions/stair platform7/StaticBody2D" parent_id_path=PackedInt32Array(664420237, 1092522839) index="0" unique_id=75527162]
+position = Vector2(2.5, -6)
+shape = SubResource("RectangleShape2D_yff2y")
+
+[node name="stair platform9" parent="Collisions" unique_id=2085569962 instance=ExtResource("4_20uc6")]
+position = Vector2(-251, -46)
+
+[node name="AnimatedSprite2D" parent="Collisions/stair platform9" index="0" unique_id=953697200]
+scale = Vector2(4, 0.25)
+
+[node name="CollisionShape2D" parent="Collisions/stair platform9/StaticBody2D" parent_id_path=PackedInt32Array(2085569962, 1092522839) index="0" unique_id=75527162]
+position = Vector2(2.5, -6)
 shape = SubResource("RectangleShape2D_yff2y")
 
 [node name="Blocking Markers" type="Node2D" parent="." unique_id=1818332048]
@@ -133,25 +150,25 @@ scale = Vector2(2.5000005, 4.75)
 [node name="ItemStands" type="Node2D" parent="." unique_id=1557254895]
 
 [node name="ShopItem" parent="ItemStands" unique_id=1956626811 instance=ExtResource("2_s88nk")]
-position = Vector2(-62, 86)
+position = Vector2(39, -97)
 
 [node name="ShopItem2" parent="ItemStands" unique_id=556954040 instance=ExtResource("2_s88nk")]
-position = Vector2(-284, 85)
+position = Vector2(-108, -98)
 
 [node name="ShopItem3" parent="ItemStands" unique_id=661188220 instance=ExtResource("2_s88nk")]
-position = Vector2(32, 86)
+position = Vector2(182, -99)
 
 [node name="ShopItem4" parent="ItemStands" unique_id=273152041 instance=ExtResource("2_s88nk")]
-position = Vector2(-47, -46)
+position = Vector2(-36, -96)
 
 [node name="ShopItem5" parent="ItemStands" unique_id=1692624574 instance=ExtResource("2_s88nk")]
-position = Vector2(-187, -48)
+position = Vector2(-179, -98)
 
 [node name="ShopItem6" parent="ItemStands" unique_id=818412783 instance=ExtResource("2_s88nk")]
-position = Vector2(101, -48)
+position = Vector2(110, -100)
 
 [node name="ShopDoor" parent="." unique_id=584781631 groups=["player_spawn"] instance=ExtResource("9_v6ipv")]
-position = Vector2(219, 28)
+position = Vector2(224, 17)
 door_mode = 1
 
 [editable path="Collisions/wall 2"]
@@ -160,5 +177,7 @@ door_mode = 1
 [editable path="Collisions/ceiling"]
 [editable path="Collisions/Top Floor"]
 [editable path="Collisions/stair platform"]
-[editable path="Collisions/stair platform2"]
+[editable path="Collisions/stair platform5"]
+[editable path="Collisions/stair platform7"]
+[editable path="Collisions/stair platform9"]
 [editable path="Blocking Markers/door_marker"]
