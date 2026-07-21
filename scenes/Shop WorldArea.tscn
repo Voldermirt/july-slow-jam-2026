@@ -3,11 +3,12 @@
 [ext_resource type="Script" uid="uid://c6fr8dinugpoe" path="res://scripts/shop_world_area.gd" id="1_pv42f"]
 [ext_resource type="Script" uid="uid://bnmwo6dq5mx8d" path="res://scripts/item_resource.gd" id="2_l0oas"]
 [ext_resource type="PackedScene" uid="uid://rd6c6cajvmr2" path="res://scenes/Shop Item.tscn" id="2_s88nk"]
+[ext_resource type="Resource" uid="uid://bdthljguuyre" path="res://items/spring_item.tres" id="3_27nn5"]
 [ext_resource type="PackedScene" uid="uid://db7r6ub843mmq" path="res://scenes/objects/full_col_block.tscn" id="3_s88nk"]
-[ext_resource type="Resource" uid="uid://blxrhac0oesr8" path="res://items/test_item.tres" id="3_v6ipv"]
 [ext_resource type="PackedScene" uid="uid://dx4wudfdre6t8" path="res://scenes/objects/basic_platform.tscn" id="4_20uc6"]
-[ext_resource type="Resource" uid="uid://br1gypir7g2e6" path="res://items/test_item_2.tres" id="4_27nn5"]
+[ext_resource type="Resource" uid="uid://b2nltvo0t2ua" path="res://items/ladder_item.tres" id="4_o3w1m"]
 [ext_resource type="PackedScene" uid="uid://c0gxboubvgc6k" path="res://scenes/markers/door_marker.tscn" id="4_tn8v7"]
+[ext_resource type="Texture2D" uid="uid://b3pnq4jwlkvb6" path="res://art/backgrounds/shop.png" id="5_27nn5"]
 [ext_resource type="PackedScene" uid="uid://cgrwe3m1eipgd" path="res://scenes/objects/shop_door.tscn" id="9_v6ipv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tn8v7"]
@@ -27,11 +28,11 @@ size = Vector2(69, 15)
 
 [node name="ShopWorldArea" type="Node2D" unique_id=1914970356]
 script = ExtResource("1_pv42f")
-item_pool = Array[ExtResource("2_l0oas")]([ExtResource("3_v6ipv"), ExtResource("4_27nn5")])
+item_pool = Array[ExtResource("2_l0oas")]([ExtResource("3_27nn5"), ExtResource("4_o3w1m")])
 
 [node name="Shop" type="Sprite2D" parent="." unique_id=864052989]
-position = Vector2(-32, -70)
-texture = ExtResource("5_v6ipv")
+position = Vector2(-26, -103)
+texture = ExtResource("5_27nn5")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=110963680]
 
@@ -150,7 +151,7 @@ position = Vector2(-187, -48)
 position = Vector2(101, -48)
 
 [node name="ShopDoor" parent="." unique_id=584781631 groups=["player_spawn"] instance=ExtResource("9_v6ipv")]
-position = Vector2(232, 11)
+position = Vector2(219, 28)
 door_mode = 1
 
 [editable path="Collisions/wall 2"]
