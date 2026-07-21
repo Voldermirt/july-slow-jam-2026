@@ -16,5 +16,6 @@ animations = [{
 [node name="hazard_marker" type="Node2D" unique_id=1902817344]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=14901784]
+visible = false
 modulate = Color(0.7338908, 0, 0.068764046, 1)
 sprite_frames = SubResource("SpriteFrames_ui06d")
